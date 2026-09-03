@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Gracelyn Deputy</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,10 +18,38 @@
             color: #333;
         }
 
+        /* Navigation */
+        nav {
+            background-color: #222;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .nav-container a {
+            color: white;
+            text-decoration: none;
+            padding: 20px 25px;
+            font-size: 16px;
+        }
+
+        .nav-container a:hover {
+            background-color: #444;
+        }
+
+        /* Header */
         header {
             background-color: #333;
             color: white;
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
         }
 
@@ -29,22 +62,7 @@
             font-size: 18px;
         }
 
-        nav {
-            background-color: #222;
-            text-align: center;
-            padding: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
+        /* Sections */
         section {
             max-width: 900px;
             margin: 40px auto;
@@ -57,6 +75,7 @@
             color: #333;
         }
 
+        /* Button */
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -71,6 +90,7 @@
             background-color: #555;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -87,15 +107,9 @@
         <p>Marketing & Management Student at Iowa State University</p>
     </header>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <section>
+        <h2>Welcome!</h2>
 
-    <section id="about">
-        <h2>About Me</h2>
         <p>
             Hi! I'm Gracelyn, a senior at Iowa State University studying
             Marketing and Management. I enjoy working with people, gaining
@@ -103,47 +117,23 @@
         </p>
     </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-
-        <h3>Friendship Ark</h3>
-        <p>
-            I work with adults with intellectual disabilities, where I have
-            developed communication, teamwork, and relationship-building skills.
-        </p>
-
-        <h3>Restaurant Experience</h3>
-        <p>
-            Working in a restaurant has helped me strengthen my communication,
-            customer service, and ability to work in a fast-paced environment.
-        </p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
+    <section>
+        <h2>About Me</h2>
 
         <p>
-            Check out some of my marketing, business, and class projects.
+            I am passionate about working with people, building relationships,
+            and learning through new experiences. My experiences in school and
+            work have helped me discover what I enjoy and what I want to
+            continue exploring after graduation.
         </p>
-
-        <a href="#" class="button">View My Projects</a>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-
-        <p>
-            Feel free to reach out to me!
-        </p>
-
-        <a href="mailto:your-email@example.com" class="button">
-            Email Me
-        </a>
     </section>
 
     <footer>
         <p>© 2026 Gracelyn Deputy</p>
     </footer>
+
+    <!-- Navigation JavaScript -->
+    <script src="nav.js"></script>
 
 </body>
 </html>
