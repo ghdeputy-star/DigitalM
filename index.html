@@ -14,17 +14,19 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f7f7f7;
-            color: #333;
+            background: linear-gradient(135deg, #fff0f7, #ffd6eb, #fff8fc);
+            color: #4a2940;
+            min-height: 100vh;
         }
 
         /* Navigation */
         nav {
-            background-color: #222;
+            background: linear-gradient(90deg, #ff69b4, #ff85c8, #ff69b4);
             width: 100%;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
         }
 
         .nav-container {
@@ -39,27 +41,66 @@
             text-decoration: none;
             padding: 20px 25px;
             font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         .nav-container a:hover {
-            background-color: #444;
+            background-color: rgba(255, 255, 255, 0.25);
+            text-shadow: 0 0 10px white;
         }
 
         /* Header */
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, #ff69b4, #ff9ed4, #ff69b4);
             color: white;
             padding: 60px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
         }
 
         header h1 {
             margin: 0;
-            font-size: 40px;
+            font-size: 45px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
         }
 
         header p {
             font-size: 18px;
+        }
+
+        /* Sparkles in header */
+        header::before {
+            content: "✨ ✧ ✦ ✨ ✧ ✦ ✨ ✧ ✦";
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            font-size: 25px;
+            letter-spacing: 20px;
+            animation: sparkle 1.5s infinite alternate;
+        }
+
+        header::after {
+            content: "✦ ✨ ✧ ✦ ✨ ✧ ✦ ✨";
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            font-size: 22px;
+            letter-spacing: 25px;
+            animation: sparkle 2s infinite alternate;
+        }
+
+        @keyframes sparkle {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         /* Sections */
@@ -67,35 +108,62 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 30px;
-            background: white;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 18px;
+            border: 2px solid #ffb6d9;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
         }
 
         h2 {
-            color: #333;
+            color: #e7549c;
         }
 
         /* Button */
         .button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #333;
+            background-color: #ff69b4;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 20px;
             margin-top: 10px;
+            transition: 0.3s;
         }
 
         .button:hover {
-            background-color: #555;
+            background-color: #ff4da6;
+            box-shadow: 0 0 15px #ff69b4;
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background: linear-gradient(90deg, #ff69b4, #ff85c8, #ff69b4);
             color: white;
+            box-shadow: 0 -4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        /* Sparkly Mouse */
+        .mouse-sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            font-size: 16px;
+            animation: sparkleMouse 0.8s ease-out forwards;
+        }
+
+        @keyframes sparkleMouse {
+            0% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.2) translateY(-25px) rotate(180deg);
+            }
         }
     </style>
 </head>
@@ -132,8 +200,38 @@
         <p>© 2026 Gracelyn Deputy</p>
     </footer>
 
-    <!-- Navigation JavaScript -->
+    <!-- Your existing navigation -->
     <script src="nav.js"></script>
+
+    <!-- Sparkly Mouse -->
+    <script>
+        document.addEventListener("mousemove", function(event) {
+
+            const sparkle = document.createElement("div");
+
+            sparkle.className = "mouse-sparkle";
+
+            const sparkleTypes = [
+                "✨",
+                "✦",
+                "✧",
+                "⋆",
+                "💖"
+            ];
+
+            sparkle.textContent =
+                sparkleTypes[Math.floor(Math.random() * sparkleTypes.length)];
+
+            sparkle.style.left = event.clientX + "px";
+            sparkle.style.top = event.clientY + "px";
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(function() {
+                sparkle.remove();
+            }, 800);
+        });
+    </script>
 
 </body>
 </html>
