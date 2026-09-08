@@ -8,15 +8,11 @@ document.addEventListener(
     function () {
 
 
-        /* =========================================
-           FIND NAVIGATION AREA
-        ========================================== */
+        /* Find the navigation container */
 
         const navigation =
             document.getElementById("navigation");
 
-
-        /* Stop if the page doesn't have navigation */
 
         if (!navigation) {
 
@@ -25,12 +21,12 @@ document.addEventListener(
         }
 
 
-
         /* =========================================
-           CREATE NAVIGATION
+           TOP NAVIGATION
         ========================================== */
 
         navigation.innerHTML = `
+
 
             <nav class="primary-navigation">
 
@@ -89,6 +85,7 @@ document.addEventListener(
 
             </nav>
 
+
         `;
 
 
@@ -103,16 +100,14 @@ document.addEventListener(
             function (event) {
 
 
-                /* Create sparkle */
-
                 const sparkle =
                     document.createElement("span");
 
 
-                sparkle.classList.add("sparkle");
+                sparkle.classList.add(
+                    "sparkle"
+                );
 
-
-                /* Different sparkle shapes */
 
                 const sparkleChoices = [
 
@@ -125,8 +120,6 @@ document.addEventListener(
                 ];
 
 
-                /* Pick random sparkle */
-
                 sparkle.innerHTML =
                     sparkleChoices[
                         Math.floor(
@@ -136,8 +129,6 @@ document.addEventListener(
                     ];
 
 
-                /* Put sparkle where mouse is */
-
                 sparkle.style.left =
                     event.clientX + "px";
 
@@ -146,14 +137,10 @@ document.addEventListener(
                     event.clientY + "px";
 
 
-                /* Add sparkle to page */
-
                 document.body.appendChild(
                     sparkle
                 );
 
-
-                /* Remove sparkle */
 
                 setTimeout(
                     function () {
