@@ -1,6 +1,6 @@
-/* ================================
-   GENERAL PAGE STYLING
-================================ */
+/* =========================================
+   BASIC RESET
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -8,72 +8,841 @@
     padding: 0;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
+
     font-family: Arial, Helvetica, sans-serif;
+
+    /* 10% background on each side */
+    padding-left: 10%;
+    padding-right: 10%;
+
+    min-height: 100vh;
+
     background:
-        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0 2px, transparent 3px),
-        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.7) 0 2px, transparent 3px),
-        radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.8) 0 2px, transparent 3px),
-        linear-gradient(135deg, #ffd6e7, #ffc1dc, #ffe3ef);
+        radial-gradient(
+            circle at 20% 20%,
+            #ffffff 0px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 80% 40%,
+            #ffffff 0px,
+            transparent 3px
+        ),
+        linear-gradient(
+            135deg,
+            #f8c8df,
+            #f6d8eb,
+            #efb5d4
+        );
 
     background-size:
         120px 120px,
-        180px 180px,
         150px 150px,
-        cover;
+        100% 100%;
 
-    min-height: 100vh;
-    color: #4a3040;
+    color: #4d3542;
+
 }
 
-/* ================================
-   MAIN WEBSITE CONTAINER
-   10% OF EACH SIDE IS BACKGROUND
-================================ */
 
-.website-container {
-    width: 80%;
+/* =========================================
+   SPARKLES IN BACKGROUND
+========================================= */
+
+body::before {
+
+    content:
+        "✦     ✧     ✦     ⋆     ✧     ✦     ⋆";
+
+    position: fixed;
+
+    top: 15px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    letter-spacing: 10px;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+/* =========================================
+   WEBSITE CONTAINER
+========================================= */
+
+.website {
+
+    width: 100%;
+
+    max-width: 1200px;
+
     margin: 0 auto;
+
+    background: #ffffff;
+
     min-height: 100vh;
-
-    background: rgba(255, 255, 255, 0.94);
-
-    border-left: 2px solid #e8a7c4;
-    border-right: 2px solid #e8a7c4;
-
-    box-shadow:
-        0 0 30px rgba(180, 80, 130, 0.20),
-        0 0 60px rgba(255, 255, 255, 0.6);
 
     position: relative;
+
+    z-index: 1;
+
+    border-left: 2px solid #e8a7c9;
+    border-right: 2px solid #e8a7c9;
+
+    box-shadow:
+        0 0 25px rgba(180, 77, 132, 0.25);
+
 }
 
-/* ================================
-   TOP HEADER
-================================ */
 
-.top-header {
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    width: 100%;
+
+}
+
+
+/* =========================================
+   TOP ROW
+   LOGO + INFORMATION
+========================================= */
+
+.top-row {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    min-height: 120px;
+
+    border-bottom: 2px solid #e6a6c7;
+
+}
+
+
+/* =========================================
+   LOGO BOX
+========================================= */
+
+.logo-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #fff7fb;
+
+    border-right: 2px solid #e6a6c7;
+
+    padding: 15px;
+
+}
+
+
+/* Logo */
+
+.logo {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    color: #c84f8d;
+
+    text-shadow:
+        1px 1px 0 #ffffff,
+        2px 2px 5px rgba(200, 79, 141, 0.25);
+
+}
+
+
+/* =========================================
+   INFORMATION AREA
+========================================= */
+
+.information-area {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffafd,
+            #ffe9f4
+        );
+
+}
+
+
+.information-area h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #c44f89;
+
+    margin-bottom: 8px;
+
+}
+
+
+.information-area p {
+
+    max-width: 650px;
+
+    line-height: 1.5;
+
+    color: #6f5361;
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+#navigation {
+
+    width: 100%;
+
+}
+
+
+/* Primary navigation */
+
+.primary-navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 50px;
+
+    gap: 5px;
+
+    background: #ffffff;
+
+    border-bottom: 2px solid #e6a6c7;
+
+}
+
+
+.primary-navigation a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: #a83f78;
+
+    font-weight: bold;
+
+    padding: 15px 24px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.primary-navigation a:hover {
+
+    background: #ffe1ef;
+
+    color: #d33783;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Sparkle when hovering over navigation */
+
+.primary-navigation a:hover::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: 4px;
+
+    right: 7px;
+
+    font-size: 10px;
+
+    color: #e989b5;
+
+}
+
+
+/* =========================================
+   SECONDARY NAVIGATION
+========================================= */
+
+.secondary-navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    min-height: 36px;
+
+    background: #fff8fc;
+
+    border-bottom: 2px solid #e6a6c7;
+
+}
+
+
+.secondary-navigation a {
+
+    text-decoration: none;
+
+    color: #b15b89;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.secondary-navigation a:hover {
+
+    color: #dd3e89;
+
+}
+
+
+/* =========================================
+   MAIN PAGE LAYOUT
+========================================= */
+
+.page-layout {
+
     display: grid;
 
     /*
-       Left = logo
-       Right = website description + navigation
+       Main content takes most of the space.
+       Right sidebar is smaller.
     */
-    grid-template-columns: 20% 80%;
 
-    border-bottom: 2px solid #e8a7c4;
+    grid-template-columns: 1fr 185px;
+
+    min-height: 650px;
+
 }
 
-/* ================================
-   LOGO
-================================ */
 
-.logo-box {
-    min-height: 120px;
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+
+    background: #ffffff;
+
+    padding: 28px;
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    width: 75%;
+
+    height: 230px;
+
+    margin: 0 auto 30px auto;
+
+    border: 2px solid #e4a4c5;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: #ffeaf4;
+
+    box-shadow:
+        0 5px 15px rgba(201, 86, 143, 0.12);
+
+}
+
+
+.hero img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================
+   ABOUT ME SECTION
+========================================= */
+
+.about-section {
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+}
+
+
+.about-section h1 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 34px;
+
+    color: #c54c89;
+
+    margin-bottom: 18px;
+
+}
+
+
+.about-section p {
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    margin-bottom: 18px;
+
+    color: #4f4148;
+
+}
+
+
+/* =========================================
+   QUICK INFORMATION CARDS
+========================================= */
+
+.quick-information {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    max-width: 750px;
+
+    margin: 30px auto 0 auto;
+
+}
+
+
+.info-card {
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7fb,
+            #ffe8f3
+        );
+
+    border: 1px solid #e8b1ce;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 10px rgba(200, 80, 140, 0.08);
+
+}
+
+
+.info-card h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #c34e88;
+
+    margin-bottom: 8px;
+
+}
+
+
+.info-card p {
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 4px;
+
+}
+
+
+/* =========================================
+   RIGHT SIDEBAR
+========================================= */
+
+.right-sidebar {
+
+    border-left: 2px solid #e6a6c7;
+
+    background: #fff8fc;
+
+    padding: 22px 15px;
+
+}
+
+
+/* Makes the content stay visible */
+
+.sticky-area {
+
+    position: sticky;
+
+    top: 25px;
+
+}
+
+
+.sticky-area > h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    color: #c34e88;
+
+    margin-bottom: 18px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   STICKY CARDS
+========================================= */
+
+.sticky-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e8b2ce;
+
+    border-radius: 10px;
+
+    padding: 13px;
+
+    margin-bottom: 13px;
+
+    box-shadow:
+        0 3px 8px rgba(200, 80, 140, 0.08);
+
+}
+
+
+.sticky-card h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    color: #bd4b83;
+
+    margin-bottom: 6px;
+
+}
+
+
+.sticky-card p {
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #66535d;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    min-height: 70px;
 
     display: flex;
-    align-items: center;
+
     justify-content: center;
 
-    background: linear-gradient(
-        145
+    align-items: center;
+
+    text-align: center;
+
+    padding: 15px;
+
+    background: #fff7fb;
+
+    border-top: 2px solid #e6a6c7;
+
+    color: #816273;
+
+    font-size: 13px;
+
+}
+
+
+footer a {
+
+    color: #b64d83;
+
+    text-decoration: none;
+
+    margin: 0 7px;
+
+}
+
+
+footer a:hover {
+
+    color: #df3987;
+
+    text-decoration: underline;
+
+}
+
+
+footer span {
+
+    color: #e1a5c3;
+
+}
+
+
+/* =========================================
+   SPARKLY MOUSE TRAIL
+========================================= */
+
+.sparkle {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    color: #e889b6;
+
+    font-size: 13px;
+
+    animation:
+        sparkle-fade 0.8s ease-out forwards;
+
+}
+
+
+@keyframes sparkle-fade {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(0)
+            rotate(180deg);
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    body {
+
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+
+    .page-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .right-sidebar {
+
+        border-left: none;
+
+        border-top: 2px solid #e6a6c7;
+
+    }
+
+
+    .hero {
+
+        width: 100%;
+
+    }
+
+
+    .quick-information {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 0;
+
+    }
+
+
+    .top-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .logo-box {
+
+        min-height: 100px;
+
+        border-right: none;
+
+        border-bottom: 2px solid #e6a6c7;
+
+    }
+
+
+    .primary-navigation {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .primary-navigation a {
+
+        padding: 10px 12px;
+
+        font-size: 14px;
+
+    }
+
+
+    .secondary-navigation {
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        padding: 8px;
+
+    }
+
+
+    .main-content {
+
+        padding: 18px;
+
+    }
+
+
+    .quick-information {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-section h1 {
+
+        font-size: 28px;
+
+    }
+
+}
