@@ -1,423 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Gracelyn Deputy</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #fff0f7, #ffd6ea, #fff5fa);
+            color: #4a2940;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(90deg, #ff69b4, #ff8ac5, #ff69b4);
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.35);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .nav-container a {
+            color: white;
+            text-decoration: none;
+            padding: 20px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-container a:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            background: linear-gradient(135deg, #ff69b4, #ff9dd2, #ff69b4);
+            color: white;
+            padding: 90px 40px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        header::before {
+            content: "✨ ✦ ✧ ✨ ✦ ✧ ✨ ✦ ✧ ✨";
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            font-size: 25px;
+            letter-spacing: 25px;
+            opacity: 0.7;
+            animation: sparkle 2s infinite alternate;
+        }
+
+        header::after {
+            content: "✧ ✨ ✦ ✧ ✨ ✦ ✧ ✨ ✦";
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+            width: 100%;
+            font-size: 22px;
+            letter-spacing: 30px;
+            opacity: 0.6;
+            animation: sparkle 1.5s infinite alternate;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 52px;
+            text-shadow: 2px 3px 8px rgba(150, 20, 90, 0.25);
+            position: relative;
+            z-index: 2;
+        }
+
+        header p {
+            font-size: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sections */
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #ffb6d9;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.18);
+            transition: 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 105, 180, 0.3);
+        }
+
+        h2 {
+            color: #e7549c;
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* Button */
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #ff69b4, #ff8ac5);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.45);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(90deg, #ff69b4, #ff8ac5, #ff69b4);
+            color: white;
+            margin-top: 60px;
+        }
+
+        /* Glitter Mouse */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 16px;
+            animation: sparkleFloat 0.8s ease-out forwards;
+        }
+
+        @keyframes sparkleFloat {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.2) translateY(-25px);
+            }
+        }
+
+        @keyframes sparkle {
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Small screen adjustments */
+        @media (max-width: 600px) {
+            .nav-container {
+                padding: 0;
+            }
+
+            .nav-container a {
+                padding: 15px 10px;
+                font-size: 13px;
+            }
+
+            header {
+                padding: 70px 20px;
+            }
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            section {
+                margin: 25px 15px;
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-    <div class="website">
-
-
-        <!-- =========================================
-             HEADER
-        ========================================== -->
-
-        <header class="header">
-
-
-            <!-- LOGO + INFORMATION -->
-
-            <div class="header-top">
-
-
-                <!-- LOGO
-                     THIS IS THE ONLY LOGO AREA -->
-
-                <div class="logo-box">
-
-                    <div class="logo">
-                        Gracelyn
-                    </div>
-
-                </div>
-
-
-                <!-- INFORMATIONAL GRAPHIC / DESCRIPTION -->
-
-                <div class="header-information">
-
-                    <h2>
-                        Welcome to My Website
-                    </h2>
-
-                    <p>
-                        Get to know me, my experiences,
-                        my education, my work, and the
-                        things that make me who I am.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- NAVIGATION GOES HERE -->
-
-            <div id="navigation"></div>
-
-
-        </header>
-
-
-
-        <!-- =========================================
-             THREE COLUMN BODY
-        ========================================== -->
-
-        <div class="body-layout">
-
-
-            <!-- =========================================
-                 LEFT COLUMN
-                 
-                 NO NAVIGATION LINKS HERE
-            ========================================== -->
-
-            <aside class="left-column">
-
-
-                <div class="left-decoration">
-
-                    <div class="sparkle-symbol">
-                        ✦
-                    </div>
-
-                    <h3>
-                        A Little About Me
-                    </h3>
-
-                    <p>
-                        Student
-                    </p>
-
-                    <p>
-                        Marketer
-                    </p>
-
-                    <p>
-                        People Person
-                    </p>
-
-                    <p>
-                        Always Learning
-                    </p>
-
-                    <div class="small-sparkles">
-                        ✧ ⋆ ✦
-                    </div>
-
-                </div>
-
-
-            </aside>
-
-
-
-            <!-- =========================================
-                 CENTER MAIN CONTENT
-        ========================================== -->
-
-            <main class="main-content">
-
-
-                <!-- HERO IMAGE -->
-
-                <div class="hero-image">
-
-                    <img
-                        src="images/hero.jpg"
-                        alt="Gracelyn Deputy"
-                    >
-
-                </div>
-
-
-
-                <!-- MAIN CONTENT -->
-
-                <section class="about-me">
-
-
-                    <h1>
-                        About Me
-                    </h1>
-
-
-                    <p>
-                        Hi! My name is Gracelyn Deputy, and I am
-                        currently a senior at Iowa State University
-                        studying marketing and management. Before
-                        coming to Iowa State, I spent my first two
-                        years at Iowa Lakes Community College,
-                        where I earned my AA degree.
-                    </p>
-
-
-                    <p>
-                        My college experience has given me a lot of
-                        opportunities to learn more about myself,
-                        both inside and outside of the classroom.
-                        While attending Iowa Lakes, I was a member
-                        of the women's basketball team. Being part
-                        of a team taught me a lot about communication,
-                        teamwork, responsibility, and working toward
-                        a common goal.
-                    </p>
-
-
-                    <p>
-                        Outside of school, I stay pretty busy with
-                        work. I currently have two jobs. I work as
-                        a server at a restaurant, and I also work
-                        for Friendship Ark, where I support adults
-                        with intellectual disabilities.
-                    </p>
-
-
-                    <p>
-                        Working at Friendship Ark has especially
-                        helped me realize how much I enjoy being
-                        around people and doing work that feels
-                        meaningful. I originally thought of it as
-                        just another job, but the experience has
-                        taught me a lot about the kind of work I
-                        actually enjoy.
-                    </p>
-
-
-                    <p>
-                        I enjoy marketing because I like the
-                        creative side of business and getting to
-                        understand people. At the same time, I have
-                        realized that making an impact on others is
-                        something that is really important to me.
-                        I am still figuring out exactly what I want
-                        to do after graduation, but I am excited to
-                        continue gaining experience and learning
-                        more about what career is right for me.
-                    </p>
-
-
-                    <p>
-                        When I am not working or doing schoolwork,
-                        I enjoy spending time with my roommates,
-                        friends, and the people around me. I like
-                        staying busy, trying new things, and making
-                        the most out of my college experience.
-                    </p>
-
-
-                </section>
-
-
-
-                <!-- INFORMATION BOXES -->
-
-                <section class="information-cards">
-
-
-                    <div class="card">
-
-                        <h3>
-                            Education
-                        </h3>
-
-                        <p>
-                            Iowa State University
-                        </p>
-
-                        <p>
-                            Marketing & Management
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <h3>
-                            Experience
-                        </h3>
-
-                        <p>
-                            Friendship Ark
-                        </p>
-
-                        <p>
-                            Restaurant Server
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <h3>
-                            Interests
-                        </h3>
-
-                        <p>
-                            Marketing, teamwork,
-                            creativity & people
-                        </p>
-
-                    </div>
-
-
-                </section>
-
-
-            </main>
-
-
-
-            <!-- =========================================
-                 RIGHT STICKY COLUMN
-        ========================================== -->
-
-            <aside class="right-column">
-
-
-                <div class="sticky-content">
-
-
-                    <h2>
-                        Quick Info
-                    </h2>
-
-
-                    <div class="sticky-box">
-
-                        <h3>
-                            School
-                        </h3>
-
-                        <p>
-                            Iowa State University
-                        </p>
-
-                    </div>
-
-
-                    <div class="sticky-box">
-
-                        <h3>
-                            Major
-                        </h3>
-
-                        <p>
-                            Marketing & Management
-                        </p>
-
-                    </div>
-
-
-                    <div class="sticky-box">
-
-                        <h3>
-                            Work
-                        </h3>
-
-                        <p>
-                            Friendship Ark
-                        </p>
-
-                        <p>
-                            Restaurant
-                        </p>
-
-                    </div>
-
-
-                    <div class="sticky-box">
-
-                        <h3>
-                            Currently
-                        </h3>
-
-                        <p>
-                            Senior year at Iowa State
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-            </aside>
-
-
-        </div>
-
-
-
-        <!-- =========================================
-             FOOTER
-        ========================================== -->
-
-        <footer>
-
-            <p>
-
-                © 2026 Gracelyn Deputy
-
-                <span> | </span>
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <span> | </span>
-
-                <a href="about.html">
-                    About Me
-                </a>
-
-                <span> | </span>
-
-                <a href="jobs.html">
-                    My Jobs
-                </a>
-
-                <span> | </span>
-
-                <a href="personal.html">
-                    Personal
-                </a>
-
-                <span> | </span>
-
-                <a href="school.html">
-                    School
-                </a>
-
-            </p>
-
-        </footer>
-
-
-    </div>
-
-
-
-    <!-- JAVASCRIPT -->
-
+    <header>
+        <h1>Gracelyn Deputy</h1>
+        <p>Marketing & Management Student at Iowa State University</p>
+    </header>
+
+    <section>
+        <h2>✨ Welcome!</h2>
+
+        <p>
+            Hi! I'm Gracelyn, a senior at Iowa State University studying
+            Marketing and Management. I enjoy working with people, gaining
+            new experiences, and finding ways to make an impact.
+        </p>
+    </section>
+
+    <section>
+        <h2>💗 About Me</h2>
+
+        <p>
+            I am passionate about working with people, building relationships,
+            and learning through new experiences. My experiences in school and
+            work have helped me discover what I enjoy and what I want to
+            continue exploring after graduation.
+        </p>
+    </section>
+
+    <footer>
+        <p>✨ © 2026 Gracelyn Deputy ✨</p>
+    </footer>
+
+    <!-- Navigation JavaScript -->
     <script src="nav.js"></script>
 
+    <!-- Glitter Mouse JavaScript -->
+    <script>
+        document.addEventListener("mousemove", function(event) {
+
+            const sparkle = document.createElement("div");
+
+            sparkle.className = "sparkle";
+
+            const sparkles = ["✨", "✦", "✧", "💖", "⋆", "⭐"];
+
+            sparkle.innerHTML =
+                sparkles[Math.floor(Math.random() * sparkles.length)];
+
+            sparkle.style.left = event.clientX + "px";
+            sparkle.style.top = event.clientY + "px";
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(function() {
+                sparkle.remove();
+            }, 800);
+        });
+    </script>
 
 </body>
-
 </html>
