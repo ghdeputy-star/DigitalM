@@ -1,5 +1,6 @@
 // Navigation bar
 document.addEventListener("DOMContentLoaded", function () {
+
     const nav = document.createElement("nav");
 
     nav.innerHTML = `
