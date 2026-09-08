@@ -1,237 +1,430 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================
+   GRACELYN'S WEBSITE
+   Pink + Cute Layout
+   ========================================= */
 
-    <title>Gracelyn Deputy</title>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #fff0f7, #ffd6eb, #fff8fc);
-            color: #4a2940;
-            min-height: 100vh;
-        }
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #ffd6e7;
+    color: #4a3040;
+    line-height: 1.6;
+}
 
-        /* Navigation */
-        nav {
-            background: linear-gradient(90deg, #ff69b4, #ff85c8, #ff69b4);
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-        }
+/* =========================================
+   MAIN WEBSITE CONTAINER
+   Leaves 10% on each side of the screen
+   ========================================= */
 
-        .nav-container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0 30px;
-        }
+.site-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #fff8fc;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.25);
+    border-left: 2px solid #f3a6c8;
+    border-right: 2px solid #f3a6c8;
+}
 
-        .nav-container a {
-            color: white;
-            text-decoration: none;
-            padding: 20px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+/* =========================================
+   HEADER
+   ========================================= */
 
-        .nav-container a:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            text-shadow: 0 0 10px white;
-        }
+.site-header {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ffe8f2
+    );
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #ff69b4, #ff9ed4, #ff69b4);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
-        }
+    border-bottom: 2px solid #f3a6c8;
+    padding: 20px 30px;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 45px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.8);
-        }
+/* Logo / Name */
 
-        header p {
-            font-size: 18px;
-        }
+.logo {
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #d94f91;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
 
-        /* Sparkles in header */
-        header::before {
-            content: "✨ ✧ ✦ ✨ ✧ ✦ ✨ ✧ ✦";
-            position: absolute;
-            top: 15px;
-            left: 0;
-            width: 100%;
-            font-size: 25px;
-            letter-spacing: 20px;
-            animation: sparkle 1.5s infinite alternate;
-        }
+.logo:hover {
+    color: #b83272;
+}
 
-        header::after {
-            content: "✦ ✨ ✧ ✦ ✨ ✧ ✦ ✨";
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            width: 100%;
-            font-size: 22px;
-            letter-spacing: 25px;
-            animation: sparkle 2s infinite alternate;
-        }
+/* =========================================
+   NAVIGATION
+   Created by nav.js
+   ========================================= */
 
-        @keyframes sparkle {
-            from {
-                opacity: 0.4;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+.main-navigation {
+    margin-top: 15px;
+}
 
-        /* Sections */
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 18px;
-            border: 2px solid #ffb6d9;
-            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
-        }
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-        h2 {
-            color: #e7549c;
-        }
+.main-navigation li {
+    display: inline-block;
+}
 
-        /* Button */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #ff69b4;
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
+.main-navigation a {
+    display: block;
+    padding: 10px 20px;
 
-        .button:hover {
-            background-color: #ff4da6;
-            box-shadow: 0 0 15px #ff69b4;
-            transform: scale(1.05);
-        }
+    background: #ffd1e5;
+    color: #713b58;
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(90deg, #ff69b4, #ff85c8, #ff69b4);
-            color: white;
-            box-shadow: 0 -4px 15px rgba(255, 105, 180, 0.3);
-        }
+    text-decoration: none;
+    font-weight: bold;
 
-        /* Sparkly Mouse */
-        .mouse-sparkle {
-            position: fixed;
-            pointer-events: none;
-            z-index: 99999;
-            font-size: 16px;
-            animation: sparkleMouse 0.8s ease-out forwards;
-        }
+    border-radius: 25px;
+    border: 1px solid #f3a6c8;
 
-        @keyframes sparkleMouse {
-            0% {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
-            }
+    transition: all 0.3s ease;
+}
 
-            100% {
-                opacity: 0;
-                transform: scale(0.2) translateY(-25px) rotate(180deg);
-            }
-        }
-    </style>
-</head>
+.main-navigation a:hover {
+    background: #f58fbd;
+    color: white;
 
-<body>
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(217, 79, 145, 0.25);
+}
 
-    <header>
-        <h1>Gracelyn Deputy</h1>
-        <p>Marketing & Management Student at Iowa State University</p>
-    </header>
+/* =========================================
+   SECONDARY NAVIGATION
+   ========================================= */
 
-    <section>
-        <h2>Welcome!</h2>
+.secondary-navigation {
+    background: #fff0f7;
+    padding: 10px 20px;
+    border-bottom: 1px solid #f3c1d7;
+    text-align: center;
+}
 
-        <p>
-            Hi! I'm Gracelyn, a senior at Iowa State University studying
-            Marketing and Management. I enjoy working with people, gaining
-            new experiences, and finding ways to make an impact.
-        </p>
-    </section>
+.secondary-navigation a {
+    color: #a84c78;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.9rem;
+}
 
-    <section>
-        <h2>About Me</h2>
+.secondary-navigation a:hover {
+    color: #d94f91;
+    text-decoration: underline;
+}
 
-        <p>
-            I am passionate about working with people, building relationships,
-            and learning through new experiences. My experiences in school and
-            work have helped me discover what I enjoy and what I want to
-            continue exploring after graduation.
-        </p>
-    </section>
+/* =========================================
+   MAIN PAGE LAYOUT
+   ========================================= */
 
-    <footer>
-        <p>© 2026 Gracelyn Deputy</p>
-    </footer>
+.page-layout {
+    display: grid;
 
-    <!-- Your existing navigation -->
-    <script src="nav.js"></script>
+    /*
+       Left navigation | Main content | Right sidebar
+    */
+    grid-template-columns: 180px 1fr 180px;
 
-    <!-- Sparkly Mouse -->
-    <script>
-        document.addEventListener("mousemove", function(event) {
+    min-height: 650px;
+}
 
-            const sparkle = document.createElement("div");
+/* =========================================
+   LEFT SIDEBAR
+   ========================================= */
 
-            sparkle.className = "mouse-sparkle";
+.left-sidebar {
+    background: #fff0f6;
+    border-right: 1px solid #f3c1d7;
+    padding: 25px 18px;
+}
 
-            const sparkleTypes = [
-                "✨",
-                "✦",
-                "✧",
-                "⋆",
-                "💖"
-            ];
+.left-sidebar h3 {
+    color: #c94782;
+    margin-bottom: 15px;
+    font-family: Georgia, serif;
+}
 
-            sparkle.textContent =
-                sparkleTypes[Math.floor(Math.random() * sparkleTypes.length)];
+.left-sidebar ul {
+    list-style: none;
+}
 
-            sparkle.style.left = event.clientX + "px";
-            sparkle.style.top = event.clientY + "px";
+.left-sidebar li {
+    margin-bottom: 10px;
+}
 
-            document.body.appendChild(sparkle);
+.left-sidebar a {
+    color: #75445d;
+    text-decoration: none;
+    display: block;
 
-            setTimeout(function() {
-                sparkle.remove();
-            }, 800);
-        });
-    </script>
+    padding: 8px 10px;
+    border-radius: 10px;
+}
 
-</body>
-</html>
+.left-sidebar a:hover {
+    background: #ffd4e6;
+    color: #c94782;
+}
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.main-content {
+    padding: 30px;
+    background: #fffafd;
+}
+
+/* =========================================
+   HERO IMAGE
+   ========================================= */
+
+.hero {
+    width: 100%;
+    min-height: 250px;
+
+    border-radius: 18px;
+    border: 2px solid #f3b3ce;
+
+    background:
+        linear-gradient(
+            rgba(255, 220, 235, 0.5),
+            rgba(255, 220, 235, 0.5)
+        ),
+        #ffeaf3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    box-shadow: 0 5px 20px rgba(217, 79, 145, 0.12);
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    text-align: center;
+    padding: 30px;
+}
+
+.hero-text h1 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: #d94f91;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: #795267;
+}
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.main-content h1,
+.main-content h2 {
+    font-family: Georgia, serif;
+    color: #c94782;
+    margin-bottom: 15px;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+}
+
+.main-content h2 {
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+.main-content p {
+    margin-bottom: 15px;
+}
+
+/* Cute content boxes */
+
+.content-box {
+    background: #fff0f6;
+    border: 1px solid #f4bdd4;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+
+    box-shadow: 0 4px 12px rgba(217, 79, 145, 0.08);
+}
+
+/* =========================================
+   RIGHT SIDEBAR
+   ========================================= */
+
+.right-sidebar {
+    background: #fff0f6;
+    border-left: 1px solid #f3c1d7;
+    padding: 25px 18px;
+
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.right-sidebar h3 {
+    font-family: Georgia, serif;
+    color: #c94782;
+    margin-bottom: 15px;
+}
+
+.sticky-card {
+    background: white;
+    border: 1px solid #f3bfd5;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.sticky-card a {
+    color: #c94782;
+    text-decoration: none;
+}
+
+.sticky-card a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   SOCIAL LINKS
+   ========================================= */
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-links a {
+    background: #ffd5e6;
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #75445d;
+    text-align: center;
+}
+
+.social-links a:hover {
+    background: #f58fbd;
+    color: white;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    background: #ffe5f0;
+    border-top: 2px solid #f3a6c8;
+
+    padding: 20px;
+    text-align: center;
+
+    color: #80536a;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #c94782;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   CUTE PINK DECORATIONS
+   ========================================= */
+
+.sparkle {
+    color: #e96ba6;
+}
+
+.heart {
+    color: #e85b98;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .site-wrapper {
+        width: 90%;
+    }
+
+    .page-layout {
+        grid-template-columns: 150px 1fr;
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .site-wrapper {
+        width: 100%;
+        border: none;
+    }
+
+    .page-layout {
+        display: block;
+    }
+
+    .left-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #f3c1d7;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+    }
+
+    .main-navigation a {
+        width: 200px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+}
