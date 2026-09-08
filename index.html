@@ -3,235 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gracelyn Deputy</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #fff0f7, #ffd6eb, #fff8fc);
-            color: #4a2940;
-            min-height: 100vh;
-        }
-
-        /* Navigation */
-        nav {
-            background: linear-gradient(90deg, #ff69b4, #ff85c8, #ff69b4);
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0 30px;
-        }
-
-        .nav-container a {
-            color: white;
-            text-decoration: none;
-            padding: 20px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .nav-container a:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            text-shadow: 0 0 10px white;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #ff69b4, #ff9ed4, #ff69b4);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 45px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.8);
-        }
-
-        header p {
-            font-size: 18px;
-        }
-
-        /* Sparkles in header */
-        header::before {
-            content: "✨ ✧ ✦ ✨ ✧ ✦ ✨ ✧ ✦";
-            position: absolute;
-            top: 15px;
-            left: 0;
-            width: 100%;
-            font-size: 25px;
-            letter-spacing: 20px;
-            animation: sparkle 1.5s infinite alternate;
-        }
-
-        header::after {
-            content: "✦ ✨ ✧ ✦ ✨ ✧ ✦ ✨";
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            width: 100%;
-            font-size: 22px;
-            letter-spacing: 25px;
-            animation: sparkle 2s infinite alternate;
-        }
-
-        @keyframes sparkle {
-            from {
-                opacity: 0.4;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Sections */
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 18px;
-            border: 2px solid #ffb6d9;
-            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
-        }
-
-        h2 {
-            color: #e7549c;
-        }
-
-        /* Button */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #ff69b4;
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background-color: #ff4da6;
-            box-shadow: 0 0 15px #ff69b4;
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(90deg, #ff69b4, #ff85c8, #ff69b4);
-            color: white;
-            box-shadow: 0 -4px 15px rgba(255, 105, 180, 0.3);
-        }
-
-        /* Sparkly Mouse */
-        .mouse-sparkle {
-            position: fixed;
-            pointer-events: none;
-            z-index: 99999;
-            font-size: 16px;
-            animation: sparkleMouse 0.8s ease-out forwards;
-        }
-
-        @keyframes sparkleMouse {
-            0% {
-                opacity: 1;
-                transform: scale(1) rotate(0deg);
-            }
-
-            100% {
-                opacity: 0;
-                transform: scale(0.2) translateY(-25px) rotate(180deg);
-            }
-        }
-    </style>
+    <title>Cute Pink Site Layout</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Gracelyn Deputy</h1>
-        <p>Marketing & Management Student at Iowa State University</p>
-    </header>
+    <div class="site-wrapper">
+        <!-- Header Section -->
+        <header class="header-container">
+            <div class="logo-box">
+                <h1>Logo</h1>
+            </div>
+            <div class="header-right">
+                <div class="info-graphics">
+                    <p>This area is for informational graphics which describe in images what your site is about</p>
+                </div>
+                <!-- Navigation containers to be filled dynamically by nav.js -->
+                <div id="top-primary-nav"></div>
+                <div id="top-secondary-nav"></div>
+            </div>
+        </header>
 
-    <section>
-        <h2>Welcome!</h2>
+        <!-- Main Content Layout -->
+        <div class="main-layout">
+            <!-- Left Sidebar Navigation -->
+            <aside class="sidebar-nav">
+                <div id="side-primary-nav"></div>
+                <div id="side-secondary-nav"></div>
+            </aside>
 
-        <p>
-            Hi! I'm Gracelyn, a senior at Iowa State University studying
-            Marketing and Management. I enjoy working with people, gaining
-            new experiences, and finding ways to make an impact.
-        </p>
-    </section>
+            <!-- Main Content Area -->
+            <main class="content-area">
+                <div class="hero-image">
+                    <h2>Hero image at top</h2>
+                </div>
+                <section class="main-text">
+                    <h2>Main content area</h2>
+                    <p>This area HAS to contain html text and images (ie not image text). Text should be around 400 words and contain 5-7% keywords.</p>
+                </section>
+            </main>
 
-    <section>
-        <h2>About Me</h2>
+            <!-- Right Sticky Sidebar -->
+            <aside class="sticky-sidebar">
+                <h3>Sticky content such as:</h3>
+                <ul>
+                    <li>news items</li>
+                    <li>adverts</li>
+                    <li>offers</li>
+                    <li>general site info</li>
+                    <li>Social Networking icons</li>
+                </ul>
+            </aside>
+        </div>
 
-        <p>
-            I am passionate about working with people, building relationships,
-            and learning through new experiences. My experiences in school and
-            work have helped me discover what I enjoy and what I want to
-            continue exploring after graduation.
-        </p>
-    </section>
+        <!-- Footer -->
+        <footer class="footer-container">
+            <p>Footer: Contains copyright info, current year, primary links, contact, privacy statement, webmaster email address</p>
+        </footer>
+    </div>
 
-    <footer>
-        <p>© 2026 Gracelyn Deputy</p>
-    </footer>
-
-    <!-- Your existing navigation -->
+    <!-- Reusable Navigation Script -->
     <script src="nav.js"></script>
-
-    <!-- Sparkly Mouse -->
-    <script>
-        document.addEventListener("mousemove", function(event) {
-
-            const sparkle = document.createElement("div");
-
-            sparkle.className = "mouse-sparkle";
-
-            const sparkleTypes = [
-                "✨",
-                "✦",
-                "✧",
-                "⋆",
-                "💖"
-            ];
-
-            sparkle.textContent =
-                sparkleTypes[Math.floor(Math.random() * sparkleTypes.length)];
-
-            sparkle.style.left = event.clientX + "px";
-            sparkle.style.top = event.clientY + "px";
-
-            document.body.appendChild(sparkle);
-
-            setTimeout(function() {
-                sparkle.remove();
-            }, 800);
-        });
-    </script>
-
 </body>
 </html>
