@@ -1,930 +1,396 @@
 /* =========================================
-   BASIC RESET
-========================================= */
+   GENERAL PAGE SETUP
+   ========================================= */
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
-
 
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #4a3040;
 
-    font-family: Arial, Helvetica, sans-serif;
+    /* Pink background around the website */
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 40%, rgba(255,255,255,0.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.9) 0 2px, transparent 3px),
+        linear-gradient(135deg, #ffd6e8, #f8a9ca, #ffd9eb);
 
-    /*
-       THIS CREATES THE 10% BACKGROUND
-       ON BOTH SIDES
-    */
-
-    padding-left: 10%;
-    padding-right: 10%;
+    background-size: 90px 90px, 120px 120px, 150px 150px, 100% 100%;
+    background-attachment: fixed;
 
     min-height: 100vh;
-
-    color: #4c3a44;
-
-    /*
-       PRETTY PINK BACKGROUND
-    */
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255,255,255,0.8) 2px,
-            transparent 3px
-        ),
-
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(255,255,255,0.7) 2px,
-            transparent 3px
-        ),
-
-        linear-gradient(
-            135deg,
-            #f6c4dc,
-            #f9dbea,
-            #efb2d2
-        );
-
-    background-size:
-        100px 100px,
-        140px 140px,
-        100% 100%;
-
 }
 
 
 /* =========================================
-   WEBSITE
-========================================= */
+   MAIN WEBSITE AREA
+   About 80% of the screen
+   ========================================= */
 
-.website {
+body::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+nav {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-left: 2px solid #e58ab1;
+    border-right: 2px solid #e58ab1;
+    border-bottom: 2px solid #e58ab1;
+
+    box-shadow:
+        0 4px 15px rgba(190, 80, 130, 0.25),
+        0 0 8px rgba(255, 255, 255, 0.9);
+
+    z-index: 1000;
+}
+
+
+/* Navigation links */
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+}
 
-    max-width: 1200px;
+.nav-container a {
+    position: relative;
+
+    color: #7b3f5d;
+    text-decoration: none;
+
+    padding: 18px 28px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: 0.25s ease;
+}
+
+
+/* Sparkly hover effect */
+
+.nav-container a:hover {
+    background: #ffe3ef;
+    color: #d34f88;
+}
+
+
+/* Small sparkle */
+
+.nav-container a:hover::after {
+    content: "✦";
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    color: #e78bb4;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   HEADER / TOP INFORMATION AREA
+   ========================================= */
+
+header {
+    position: relative;
+
+    width: 80%;
+    min-height: 135px;
 
     margin: 0 auto;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.97);
 
-    min-height: 100vh;
+    border-left: 2px solid #e58ab1;
+    border-right: 2px solid #e58ab1;
+    border-bottom: 2px solid #e58ab1;
 
-    border-left: 2px solid #dca0c0;
+    padding: 35px 40px 35px 220px;
 
-    border-right: 2px solid #dca0c0;
+    text-align: left;
 
     box-shadow:
-        0 0 30px rgba(173, 70, 125, 0.25);
-
-}
-
-
-/* =========================================
-   HEADER
-========================================= */
-
-.header {
-    width: 100%;
-}
-
-
-/* =========================================
-   TOP HEADER
-========================================= */
-
-.header-top {
-
-    display: grid;
-
-    /*
-       LEFT = LOGO
-       RIGHT = INFORMATION
-    */
-
-    grid-template-columns: 160px 1fr;
-
-    min-height: 115px;
-
-    border-bottom: 2px solid #dca0c0;
-
+        0 5px 18px rgba(190, 80, 130, 0.22);
 }
 
 
 /* =========================================
    LOGO BOX
-========================================= */
+   ========================================= */
 
-.logo-box {
+header::before {
+    content: "LOGO";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 180px;
+    height: 100%;
 
     display: flex;
-
+    align-items: center;
     justify-content: center;
 
-    align-items: center;
+    background: #fff5fa;
 
-    background: #fff8fc;
+    border-right: 2px solid #e58ab1;
 
-    border-right: 2px solid #dca0c0;
+    color: #d34f88;
 
-}
-
-
-/*
-   LOGO IS ONLY HERE
-*/
-
-.logo {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 34px;
-
+    font-size: 30px;
     font-weight: bold;
 
-    color: #c44888;
+    letter-spacing: 2px;
 
     text-shadow:
-        2px 2px 5px
-        rgba(190, 75, 135, 0.2);
-
+        0 0 5px #ffffff,
+        0 0 10px #f4a4c7;
 }
 
 
 /* =========================================
-   INFORMATION AREA
-========================================= */
-
-.header-information {
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fffafd,
-            #ffe8f3
-        );
-
-}
-
-
-.header-information h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    color: #c44888;
-
-    margin-bottom: 8px;
-
-}
-
-
-.header-information p {
-
-    max-width: 700px;
-
-    line-height: 1.5;
-
-    color: #67515d;
-
-}
-
-
-/* =========================================
-   PRIMARY NAVIGATION
-========================================= */
-
-.primary-navigation {
-
-    height: 42px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background: white;
-
-    border-bottom: 2px solid #dca0c0;
-
-}
-
-
-.primary-navigation a {
-
-    height: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    padding:
-        0 25px;
-
-    text-decoration: none;
-
-    color: #a63e76;
-
-    font-weight: bold;
-
-    transition: all 0.3s ease;
-
-}
-
-
-.primary-navigation a:hover {
-
-    background: #ffe0ef;
-
-    color: #d52f80;
-
-}
-
-
-/* =========================================
-   SECONDARY NAVIGATION
-========================================= */
-
-.secondary-navigation {
-
-    height: 32px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 30px;
-
-    background: #fff8fc;
-
-    border-bottom: 2px solid #dca0c0;
-
-}
-
-
-.secondary-navigation a {
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-    color: #a95782;
-
-}
-
-
-.secondary-navigation a:hover {
-
-    color: #d52f80;
-
-    text-decoration: underline;
-
-}
-
-
-/* =========================================
-   THREE COLUMN BODY
-========================================= */
-
-.body-layout {
-
-    display: grid;
-
-    /*
-       THIS IS THE KEY PART
-
-       LEFT     CENTER        RIGHT
-       160px    flexible      175px
-    */
-
-    grid-template-columns:
-        160px
-        minmax(0, 1fr)
-        175px;
-
-    min-height: 650px;
-
-}
-
-
-/* =========================================
-   LEFT COLUMN
-========================================= */
-
-.left-column {
-
-    background: #fff8fc;
-
-    border-right: 2px solid #dca0c0;
-
-    padding: 25px 15px;
-
-}
-
-
-/*
-   This is NOT navigation.
-   It just fills the left box from
-   your original layout.
-*/
-
-.left-decoration {
-
-    text-align: center;
-
-    position: sticky;
-
-    top: 25px;
-
-}
-
-
-.sparkle-symbol {
+   HEADER TEXT
+   ========================================= */
+
+header h1 {
+    margin: 0 0 8px 0;
 
     font-size: 34px;
 
-    color: #e58ab4;
+    color: #c7477e;
 
-    margin-bottom: 15px;
-
+    text-shadow:
+        1px 1px 0 white,
+        0 0 8px rgba(235, 128, 171, 0.4);
 }
 
-
-.left-decoration h3 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    color: #c44888;
+header p {
+    margin: 0;
 
     font-size: 17px;
 
-    margin-bottom: 20px;
-
-}
-
-
-.left-decoration p {
-
-    color: #9c5c7e;
-
-    font-size: 13px;
-
-    margin-bottom: 13px;
-
-}
-
-
-.small-sparkles {
-
-    color: #e28ab4;
-
-    font-size: 17px;
-
-    margin-top: 20px;
-
+    color: #6f4a5a;
 }
 
 
 /* =========================================
-   CENTER MAIN CONTENT
-========================================= */
+   CONTENT AREA
+   ========================================= */
 
-.main-content {
-
-    background: white;
-
-    padding: 25px;
-
-}
-
-
-/* =========================================
-   HERO IMAGE
-========================================= */
-
-.hero-image {
-
-    width: 75%;
-
-    height: 220px;
-
-    margin:
-        0 auto 28px auto;
-
-    border:
-        2px solid #dfa4c4;
-
-    border-radius: 5px;
-
-    overflow: hidden;
-
-    background: #ffe9f4;
-
-    box-shadow:
-        0 4px 12px
-        rgba(190, 75, 135, 0.12);
-
-}
-
-
-.hero-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-}
-
-
-/* =========================================
-   ABOUT ME
-========================================= */
-
-.about-me {
-
-    max-width: 700px;
+section {
+    width: 80%;
 
     margin: 0 auto;
 
-}
+    padding: 35px 45px;
 
+    background: rgba(255, 255, 255, 0.97);
 
-.about-me h1 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 32px;
-
-    color: #c44888;
-
-    margin-bottom: 18px;
-
-}
-
-
-.about-me p {
-
-    font-size: 15px;
-
-    line-height: 1.7;
-
-    margin-bottom: 16px;
-
-    color: #51434a;
-
-}
-
-
-/* =========================================
-   INFORMATION CARDS
-========================================= */
-
-.information-cards {
-
-    max-width: 700px;
-
-    margin:
-        30px auto 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 12px;
-
-}
-
-
-.card {
-
-    padding: 15px;
-
-    text-align: center;
-
-    background: #fff6fb;
-
-    border:
-        1px solid #e5b0cb;
-
-    border-radius: 8px;
-
-}
-
-
-.card h3 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    color: #c44888;
-
-    margin-bottom: 8px;
-
-}
-
-
-.card p {
-
-    font-size: 12px;
-
-    margin-bottom: 4px;
-
-    line-height: 1.4;
-
-}
-
-
-/* =========================================
-   RIGHT COLUMN
-========================================= */
-
-.right-column {
-
-    background: #fff8fc;
-
-    border-left: 2px solid #dca0c0;
-
-    padding: 25px 13px;
-
-}
-
-
-/* =========================================
-   STICKY CONTENT
-========================================= */
-
-.sticky-content {
-
-    position: sticky;
-
-    top: 25px;
-
-}
-
-
-.sticky-content h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    color: #c44888;
-
-    font-size: 20px;
-
-    text-align: center;
-
-    margin-bottom: 18px;
-
-}
-
-
-/* =========================================
-   STICKY BOXES
-========================================= */
-
-.sticky-box {
-
-    background: white;
-
-    border:
-        1px solid #e5b0cb;
-
-    border-radius: 8px;
-
-    padding: 12px;
-
-    margin-bottom: 12px;
+    border-left: 2px solid #e58ab1;
+    border-right: 2px solid #e58ab1;
+    border-bottom: 1px solid #efb2ca;
 
     box-shadow:
-        0 3px 7px
-        rgba(190, 75, 135, 0.08);
-
+        0 5px 18px rgba(190, 80, 130, 0.18);
 }
 
 
-.sticky-box h3 {
+/* First section */
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    color: #b94a81;
-
-    font-size: 15px;
-
-    margin-bottom: 6px;
-
+section:first-of-type {
+    margin-top: 20px;
 }
 
 
-.sticky-box p {
+/* Section headings */
 
-    color: #67545e;
+section h2 {
+    margin-top: 0;
 
-    font-size: 12px;
+    color: #c7477e;
 
-    line-height: 1.5;
+    font-size: 27px;
 
-    margin-bottom: 3px;
+    border-bottom: 2px solid #f2b1cd;
 
+    padding-bottom: 10px;
+}
+
+
+/* Section paragraphs */
+
+section p {
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    color: #59414c;
+}
+
+
+/* =========================================
+   SPARKLES AROUND CONTENT
+   ========================================= */
+
+section::before {
+    content: "✦";
+
+    float: right;
+
+    color: #e78bb4;
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button {
+    display: inline-block;
+
+    padding: 11px 24px;
+
+    margin-top: 10px;
+
+    background: #e88db5;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 3px 8px rgba(190, 80, 130, 0.3);
+
+    transition: 0.25s ease;
+}
+
+.button:hover {
+    background: #d96c9d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(190, 80, 130, 0.4);
 }
 
 
 /* =========================================
    FOOTER
-========================================= */
+   ========================================= */
 
 footer {
+    width: 80%;
 
-    min-height: 65px;
+    margin: 0 auto 10% auto;
 
-    display: flex;
+    padding: 22px 30px;
 
-    justify-content: center;
+    background: #f2a5c5;
 
-    align-items: center;
+    color: white;
 
     text-align: center;
 
-    padding: 15px;
+    border-left: 2px solid #e58ab1;
+    border-right: 2px solid #e58ab1;
+    border-bottom: 2px solid #e58ab1;
 
-    background: #fff8fc;
-
-    border-top: 2px solid #dca0c0;
-
-    color: #806271;
-
-    font-size: 12px;
-
+    box-shadow:
+        0 5px 18px rgba(190, 80, 130, 0.2);
 }
 
-
-footer a {
-
-    color: #b44980;
-
-    text-decoration: none;
-
-    margin:
-        0 6px;
-
-}
-
-
-footer a:hover {
-
-    color: #db347f;
-
-    text-decoration: underline;
-
-}
-
-
-footer span {
-
-    color: #dfa4c4;
-
+footer p {
+    margin: 0;
 }
 
 
 /* =========================================
-   SPARKLY MOUSE
-========================================= */
+   RESPONSIVE DESIGN
+   ========================================= */
 
-.sparkle {
+@media (max-width: 800px) {
 
-    position: fixed;
-
-    pointer-events: none;
-
-    z-index: 9999;
-
-    color: #e789b5;
-
-    font-size: 13px;
-
-    animation:
-        sparkle-fade
-        0.8s
-        ease-out
-        forwards;
-
-}
-
-
-@keyframes sparkle-fade {
-
-    0% {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            rotate(0deg);
-
-    }
-
-    100% {
-
-        opacity: 0;
-
-        transform:
-            scale(0)
-            rotate(180deg);
-
-    }
-
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    body {
-
-        padding-left: 5%;
-
-        padding-right: 5%;
-
-    }
-
-
-    .body-layout {
-
-        grid-template-columns:
-            120px
-            minmax(0, 1fr)
-            150px;
-
-    }
-
-
-    .hero-image {
-
+    nav,
+    header,
+    section,
+    footer {
         width: 90%;
-
     }
 
-
-    .information-cards {
-
-        grid-template-columns:
-            1fr;
-
+    .nav-container {
+        flex-wrap: wrap;
     }
 
+    .nav-container a {
+        padding: 14px 15px;
+        font-size: 14px;
+    }
+
+    header {
+        padding: 30px;
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    header::before {
+        width: 100%;
+        height: 110px;
+
+        border-right: none;
+        border-bottom: 2px solid #e58ab1;
+    }
+
+    section {
+        padding: 25px;
+    }
 }
 
 
-/* =========================================
-   PHONE
-========================================= */
+@media (max-width: 500px) {
 
-@media (max-width: 650px) {
-
-    body {
-
-        padding: 0;
-
+    .nav-container {
+        flex-direction: column;
     }
 
-
-    .header-top {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .logo-box {
-
-        min-height: 90px;
-
-        border-right: none;
-
-        border-bottom: 2px solid #dca0c0;
-
-    }
-
-
-    .primary-navigation {
-
-        flex-wrap: wrap;
-
-        height: auto;
-
-    }
-
-
-    .primary-navigation a {
-
-        padding:
-            10px 12px;
-
-    }
-
-
-    .secondary-navigation {
-
-        flex-wrap: wrap;
-
-        height: auto;
-
-        padding: 8px;
-
-        gap: 12px;
-
-    }
-
-
-    /*
-       On a phone the three columns
-       stack vertically.
-    */
-
-    .body-layout {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .left-column {
-
-        border-right: none;
-
-        border-bottom: 2px solid #dca0c0;
-
-    }
-
-
-    .right-column {
-
-        border-left: none;
-
-        border-top: 2px solid #dca0c0;
-
-    }
-
-
-    .main-content {
-
-        padding: 18px;
-
-    }
-
-
-    .hero-image {
-
+    .nav-container a {
         width: 100%;
-
-        height: 200px;
-
+        text-align: center;
     }
 
+    header h1 {
+        font-size: 27px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
 }
