@@ -1,6 +1,6 @@
-/* =========================================
-   GENERAL PAGE SETUP
-========================================= */
+/* ================================
+   GENERAL PAGE STYLING
+================================ */
 
 * {
     box-sizing: border-box;
@@ -8,459 +8,72 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f8dff0;
-    color: #333;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.7) 0 2px, transparent 3px),
+        radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.8) 0 2px, transparent 3px),
+        linear-gradient(135deg, #ffd6e7, #ffc1dc, #ffe3ef);
+
+    background-size:
+        120px 120px,
+        180px 180px,
+        150px 150px,
+        cover;
+
     min-height: 100vh;
-    padding: 0 10%;
-    position: relative;
+    color: #4a3040;
 }
 
-/* Cute background sparkle effect */
-
-body::before {
-    content: "✦  ✧  ✦  ✧  ✦  ✧  ✦  ✧  ✦  ✧  ✦";
-    position: fixed;
-    top: 20px;
-    left: 0;
-    width: 100%;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 20px;
-    letter-spacing: 20px;
-    text-align: center;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* =========================================
+/* ================================
    MAIN WEBSITE CONTAINER
-========================================= */
+   10% OF EACH SIDE IS BACKGROUND
+================================ */
 
-.site-container {
-    width: 100%;
-    max-width: 1200px;
-    min-height: 100vh;
+.website-container {
+    width: 80%;
     margin: 0 auto;
-    background: white;
-    border-left: 2px solid #e8a8ce;
-    border-right: 2px solid #e8a8ce;
-    box-shadow: 0 0 30px rgba(214, 119, 173, 0.25);
+    min-height: 100vh;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-left: 2px solid #e8a7c4;
+    border-right: 2px solid #e8a7c4;
+
+    box-shadow:
+        0 0 30px rgba(180, 80, 130, 0.20),
+        0 0 60px rgba(255, 255, 255, 0.6);
+
     position: relative;
-    z-index: 1;
 }
 
-/* =========================================
-   HEADER
-========================================= */
-
-header {
-    width: 100%;
-}
-
-/* Top section containing logo + informational graphic */
+/* ================================
+   TOP HEADER
+================================ */
 
 .top-header {
     display: grid;
-    grid-template-columns: 180px 1fr;
-    min-height: 115px;
-    border-bottom: 2px solid #e8a8ce;
+
+    /*
+       Left = logo
+       Right = website description + navigation
+    */
+    grid-template-columns: 20% 80%;
+
+    border-bottom: 2px solid #e8a7c4;
 }
 
-/* =========================================
+/* ================================
    LOGO
-========================================= */
+================================ */
 
 .logo-box {
-    border-right: 2px solid #e8a8ce;
+    min-height: 120px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff8fc;
-    padding: 15px;
-}
 
-.logo-box img {
-    max-width: 100%;
-    max-height: 80px;
-    object-fit: contain;
-}
-
-.logo-text {
-    font-family: Georgia, serif;
-    font-size: 32px;
-    color: #d45d9c;
-    font-weight: bold;
-}
-
-/* =========================================
-   INFORMATIONAL GRAPHIC AREA
-========================================= */
-
-.info-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
     background: linear-gradient(
-        135deg,
-        #fff8fc,
-        #ffe8f4
-    );
-    color: #555;
-}
-
-.info-area p {
-    max-width: 700px;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
-#navigation {
-    width: 100%;
-}
-
-/* Primary navigation */
-
-.primary-navigation {
-    min-height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: #fff;
-    border-bottom: 2px solid #e8a8ce;
-}
-
-.primary-navigation a {
-    text-decoration: none;
-    color: #a83f78;
-    font-weight: bold;
-    padding: 13px 25px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.primary-navigation a:hover {
-    background: #ffe1f0;
-    color: #d33c8a;
-    transform: translateY(-2px);
-}
-
-/* Little sparkle on hover */
-
-.primary-navigation a:hover::after {
-    content: "✦";
-    position: absolute;
-    right: 7px;
-    top: 5px;
-    font-size: 10px;
-    color: #f08abb;
-}
-
-/* Secondary navigation */
-
-.secondary-navigation {
-    min-height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    background: #fff8fc;
-    border-bottom: 2px solid #e8a8ce;
-}
-
-.secondary-navigation a {
-    color: #b85b8c;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.secondary-navigation a:hover {
-    color: #e13d8b;
-    text-decoration: underline;
-}
-
-/* =========================================
-   MAIN WEBSITE LAYOUT
-========================================= */
-
-.main-layout {
-    display: grid;
-    grid-template-columns: 160px 1fr 175px;
-    min-height: 600px;
-}
-
-/* =========================================
-   LEFT SIDEBAR
-========================================= */
-
-.left-sidebar {
-    border-right: 2px solid #e8a8ce;
-    background: #fff8fc;
-    padding: 25px 15px;
-}
-
-.left-sidebar h3 {
-    color: #c84f91;
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.left-sidebar a {
-    display: block;
-    color: #8f4770;
-    text-decoration: none;
-    padding: 8px 5px;
-    font-size: 14px;
-    border-radius: 8px;
-    margin-bottom: 5px;
-}
-
-.left-sidebar a:hover {
-    background: #ffe1f0;
-    color: #d83c89;
-}
-
-/* =========================================
-   MAIN CONTENT
-========================================= */
-
-.main-content {
-    padding: 25px;
-    background: white;
-}
-
-/* =========================================
-   HERO IMAGE
-========================================= */
-
-.hero-image {
-    width: 75%;
-    height: 220px;
-    margin: 0 auto 30px auto;
-    border: 2px solid #e8a8ce;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #ffeaf5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-placeholder {
-    color: #c65a91;
-    font-size: 24px;
-    font-family: Georgia, serif;
-}
-
-/* =========================================
-   CONTENT
-========================================= */
-
-.content-section {
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.content-section h1 {
-    color: #c54889;
-    font-family: Georgia, serif;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.content-section h2 {
-    color: #c95b94;
-    font-family: Georgia, serif;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
-
-.content-section p {
-    line-height: 1.7;
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.content-section img {
-    max-width: 100%;
-    border-radius: 12px;
-    margin: 15px 0;
-}
-
-/* =========================================
-   RIGHT STICKY SIDEBAR
-========================================= */
-
-.right-sidebar {
-    border-left: 2px solid #e8a8ce;
-    background: #fff8fc;
-    padding: 25px 15px;
-}
-
-.sticky-content {
-    position: sticky;
-    top: 25px;
-}
-
-.right-sidebar h3 {
-    color: #c84f91;
-    font-family: Georgia, serif;
-    margin-bottom: 15px;
-}
-
-.sticky-item {
-    background: white;
-    border: 1px solid #efb7d6;
-    border-radius: 10px;
-    padding: 12px;
-    margin-bottom: 12px;
-    box-shadow: 0 3px 8px rgba(200, 80, 145, 0.1);
-}
-
-.sticky-item a {
-    text-decoration: none;
-    color: #ad4f83;
-    font-size: 14px;
-}
-
-.sticky-item a:hover {
-    color: #e13d8b;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-    border-top: 2px solid #e8a8ce;
-    background: #fff8fc;
-    min-height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 15px;
-    color: #8d6077;
-    font-size: 13px;
-}
-
-footer a {
-    color: #bd4e89;
-    text-decoration: none;
-    margin: 0 8px;
-}
-
-footer a:hover {
-    color: #e13d8b;
-}
-
-/* =========================================
-   SPARKLY MOUSE TRAIL
-========================================= */
-
-.sparkle {
-    position: fixed;
-    pointer-events: none;
-    font-size: 12px;
-    color: #e98cba;
-    z-index: 9999;
-    animation: sparkleFade 0.8s ease-out forwards;
-}
-
-@keyframes sparkleFade {
-    0% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(0) rotate(180deg);
-    }
-}
-
-/* =========================================
-   MOBILE RESPONSIVE DESIGN
-========================================= */
-
-@media (max-width: 900px) {
-
-    body {
-        padding: 0 4%;
-    }
-
-    .main-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .left-sidebar {
-        display: none;
-    }
-
-    .right-sidebar {
-        border-left: none;
-        border-top: 2px solid #e8a8ce;
-    }
-
-    .top-header {
-        grid-template-columns: 130px 1fr;
-    }
-
-    .primary-navigation {
-        flex-wrap: wrap;
-    }
-
-    .primary-navigation a {
-        padding: 10px 12px;
-    }
-
-    .hero-image {
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-
-    body {
-        padding: 0;
-    }
-
-    .top-header {
-        grid-template-columns: 1fr;
-    }
-
-    .logo-box {
-        border-right: none;
-        border-bottom: 2px solid #e8a8ce;
-        min-height: 100px;
-    }
-
-    .info-area {
-        min-height: 100px;
-    }
-
-    .main-content {
-        padding: 18px;
-    }
-
-    .content-section h1 {
-        font-size: 27px;
-    }
-}
+        145
