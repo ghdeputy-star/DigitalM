@@ -1,15 +1,21 @@
-// Navigation bar
 document.addEventListener("DOMContentLoaded", function () {
-    const nav = document.createElement("nav");
 
-    nav.innerHTML = `
-        <div class="nav-container">
-            <a href="index.html">About Me</a>
-            <a href="jobs.html">My Jobs</a>
-            <a href="personal.html">Personal</a>
-            <a href="school.html">School</a>
-        </div>
+    const navigation = document.getElementById("main-nav");
+
+    if (!navigation) {
+        return;
+    }
+
+    navigation.innerHTML = `
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="jobs.html">My Jobs</a></li>
+                <li><a href="personal.html">Personal</a></li>
+                <li><a href="school.html">School</a></li>
+            </ul>
+        </nav>
     `;
 
-    document.body.prepend(nav);
 });
