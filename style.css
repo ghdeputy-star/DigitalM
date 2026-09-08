@@ -21,7 +21,7 @@ body {
     position: relative;
 }
 
-/* Cute sparkle background */
+/* Cute background sparkle effect */
 
 body::before {
     content: "✦  ✧  ✦  ✧  ✦  ✧  ✦  ✧  ✦  ✧  ✦";
@@ -36,7 +36,6 @@ body::before {
     pointer-events: none;
     z-index: 0;
 }
-
 
 /* =========================================
    MAIN WEBSITE CONTAINER
@@ -55,7 +54,6 @@ body::before {
     z-index: 1;
 }
 
-
 /* =========================================
    HEADER
 ========================================= */
@@ -64,11 +62,7 @@ header {
     width: 100%;
 }
 
-
-/* =========================================
-   TOP HEADER
-   LOGO + INFORMATION AREA
-========================================= */
+/* Top section containing logo + informational graphic */
 
 .top-header {
     display: grid;
@@ -76,7 +70,6 @@ header {
     min-height: 115px;
     border-bottom: 2px solid #e8a8ce;
 }
-
 
 /* =========================================
    LOGO
@@ -104,9 +97,8 @@ header {
     font-weight: bold;
 }
 
-
 /* =========================================
-   INFORMATION AREA
+   INFORMATIONAL GRAPHIC AREA
 ========================================= */
 
 .info-area {
@@ -129,7 +121,6 @@ header {
     line-height: 1.5;
 }
 
-
 /* =========================================
    NAVIGATION
 ========================================= */
@@ -138,8 +129,7 @@ header {
     width: 100%;
 }
 
-
-/* PRIMARY NAVIGATION */
+/* Primary navigation */
 
 .primary-navigation {
     min-height: 48px;
@@ -166,8 +156,7 @@ header {
     transform: translateY(-2px);
 }
 
-
-/* Sparkle on navigation hover */
+/* Little sparkle on hover */
 
 .primary-navigation a:hover::after {
     content: "✦";
@@ -178,8 +167,7 @@ header {
     color: #f08abb;
 }
 
-
-/* SECONDARY NAVIGATION */
+/* Secondary navigation */
 
 .secondary-navigation {
     min-height: 35px;
@@ -202,28 +190,46 @@ header {
     text-decoration: underline;
 }
 
-
 /* =========================================
    MAIN WEBSITE LAYOUT
 ========================================= */
 
-/*
-   NO LEFT SIDEBAR ANYMORE
-
-   The page now has:
-   - Main content
-   - Right sticky sidebar
-*/
-
 .main-layout {
     display: grid;
-
-    /* Main content + right sidebar */
-    grid-template-columns: 1fr 175px;
-
+    grid-template-columns: 160px 1fr 175px;
     min-height: 600px;
 }
 
+/* =========================================
+   LEFT SIDEBAR
+========================================= */
+
+.left-sidebar {
+    border-right: 2px solid #e8a8ce;
+    background: #fff8fc;
+    padding: 25px 15px;
+}
+
+.left-sidebar h3 {
+    color: #c84f91;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.left-sidebar a {
+    display: block;
+    color: #8f4770;
+    text-decoration: none;
+    padding: 8px 5px;
+    font-size: 14px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.left-sidebar a:hover {
+    background: #ffe1f0;
+    color: #d83c89;
+}
 
 /* =========================================
    MAIN CONTENT
@@ -233,7 +239,6 @@ header {
     padding: 25px;
     background: white;
 }
-
 
 /* =========================================
    HERO IMAGE
@@ -247,7 +252,6 @@ header {
     border-radius: 8px;
     overflow: hidden;
     background: #ffeaf5;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -265,9 +269,8 @@ header {
     font-family: Georgia, serif;
 }
 
-
 /* =========================================
-   MAIN CONTENT TEXT
+   CONTENT
 ========================================= */
 
 .content-section {
@@ -301,7 +304,6 @@ header {
     margin: 15px 0;
 }
 
-
 /* =========================================
    RIGHT STICKY SIDEBAR
 ========================================= */
@@ -323,16 +325,12 @@ header {
     margin-bottom: 15px;
 }
 
-
-/* Individual sticky items */
-
 .sticky-item {
     background: white;
     border: 1px solid #efb7d6;
     border-radius: 10px;
     padding: 12px;
     margin-bottom: 12px;
-
     box-shadow: 0 3px 8px rgba(200, 80, 145, 0.1);
 }
 
@@ -346,7 +344,6 @@ header {
     color: #e13d8b;
 }
 
-
 /* =========================================
    FOOTER
 ========================================= */
@@ -354,17 +351,12 @@ header {
 footer {
     border-top: 2px solid #e8a8ce;
     background: #fff8fc;
-
     min-height: 65px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     padding: 15px;
-
     color: #8d6077;
     font-size: 13px;
 }
@@ -379,25 +371,20 @@ footer a:hover {
     color: #e13d8b;
 }
 
-
 /* =========================================
-   SPARKLY MOUSE
+   SPARKLY MOUSE TRAIL
 ========================================= */
 
 .sparkle {
     position: fixed;
     pointer-events: none;
-
     font-size: 12px;
     color: #e98cba;
-
     z-index: 9999;
-
     animation: sparkleFade 0.8s ease-out forwards;
 }
 
 @keyframes sparkleFade {
-
     0% {
         opacity: 1;
         transform: scale(1) rotate(0deg);
@@ -407,12 +394,10 @@ footer a:hover {
         opacity: 0;
         transform: scale(0) rotate(180deg);
     }
-
 }
 
-
 /* =========================================
-   TABLET / MOBILE
+   MOBILE RESPONSIVE DESIGN
 ========================================= */
 
 @media (max-width: 900px) {
@@ -421,13 +406,13 @@ footer a:hover {
         padding: 0 4%;
     }
 
-    /* Main content becomes one column */
-
     .main-layout {
         grid-template-columns: 1fr;
     }
 
-    /* Right sidebar moves underneath */
+    .left-sidebar {
+        display: none;
+    }
 
     .right-sidebar {
         border-left: none;
@@ -449,13 +434,7 @@ footer a:hover {
     .hero-image {
         width: 100%;
     }
-
 }
-
-
-/* =========================================
-   PHONE
-========================================= */
 
 @media (max-width: 600px) {
 
@@ -484,5 +463,4 @@ footer a:hover {
     .content-section h1 {
         font-size: 27px;
     }
-
 }
