@@ -1,8 +1,3 @@
-/* =========================================
-   GRACELYN'S WEBSITE
-   Pink + Cute Layout
-   ========================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -21,84 +16,111 @@ body {
 }
 
 /* =========================================
-   MAIN WEBSITE CONTAINER
-   Leaves 10% on each side of the screen
+   MAIN WEBSITE
+   80% WIDTH = 10% PINK BACKGROUND
+   ON EACH SIDE
    ========================================= */
 
 .site-wrapper {
     width: 80%;
     margin: 0 auto;
     min-height: 100vh;
-    background: #fff8fc;
-    box-shadow: 0 0 30px rgba(255, 105, 180, 0.25);
+    background: #fffafd;
     border-left: 2px solid #f3a6c8;
     border-right: 2px solid #f3a6c8;
+    box-shadow: 0 0 30px rgba(217, 79, 145, 0.25);
 }
+
 
 /* =========================================
-   HEADER
+   TOP OF WEBSITE
    ========================================= */
 
-.site-header {
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #ffe8f2
-    );
-
+.top-header {
+    display: grid;
+    grid-template-columns: 160px 1fr;
     border-bottom: 2px solid #f3a6c8;
-    padding: 20px 30px;
 }
 
-/* Logo / Name */
 
-.logo {
+/* =========================================
+   LOGO
+   TOP LEFT ONLY
+   ========================================= */
+
+.logo-box {
+    background: #ffe4f0;
+    border-right: 2px solid #f3a6c8;
+
+    min-height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-box a {
     font-family: Georgia, serif;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #d94f91;
     text-decoration: none;
-    letter-spacing: 1px;
 }
 
-.logo:hover {
+.logo-box a:hover {
     color: #b83272;
 }
 
+
 /* =========================================
-   NAVIGATION
-   Created by nav.js
+   RIGHT SIDE OF TOP HEADER
+   ========================================= */
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   INFORMATIONAL AREA
+   ========================================= */
+
+.info-area {
+    min-height: 65px;
+
+    padding: 15px 25px;
+
+    background: #fff8fc;
+
+    color: #75445d;
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   PRIMARY NAVIGATION
    ========================================= */
 
 .main-navigation {
-    margin-top: 15px;
-}
+    min-height: 32px;
 
-.main-navigation ul {
-    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
 
-.main-navigation li {
-    display: inline-block;
+    background: #ffd1e5;
+
+    border-top: 1px solid #f3a6c8;
+    border-bottom: 1px solid #f3a6c8;
 }
 
 .main-navigation a {
-    display: block;
-    padding: 10px 20px;
-
-    background: #ffd1e5;
     color: #713b58;
-
     text-decoration: none;
     font-weight: bold;
 
-    border-radius: 25px;
-    border: 1px solid #f3a6c8;
+    padding: 5px 20px;
 
     transition: all 0.3s ease;
 }
@@ -106,63 +128,68 @@ body {
 .main-navigation a:hover {
     background: #f58fbd;
     color: white;
-
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(217, 79, 145, 0.25);
 }
+
 
 /* =========================================
    SECONDARY NAVIGATION
    ========================================= */
 
 .secondary-navigation {
+    min-height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background: #fff0f7;
-    padding: 10px 20px;
-    border-bottom: 1px solid #f3c1d7;
-    text-align: center;
 }
 
 .secondary-navigation a {
     color: #a84c78;
     text-decoration: none;
-    margin: 0 12px;
-    font-size: 0.9rem;
+
+    margin: 0 15px;
+
+    font-size: 0.85rem;
 }
 
 .secondary-navigation a:hover {
     color: #d94f91;
-    text-decoration: underline;
 }
 
+
 /* =========================================
-   MAIN PAGE LAYOUT
+   THREE COLUMN MAIN AREA
    ========================================= */
 
 .page-layout {
     display: grid;
 
-    /*
-       Left navigation | Main content | Right sidebar
-    */
-    grid-template-columns: 180px 1fr 180px;
+    grid-template-columns: 160px 1fr 160px;
 
     min-height: 650px;
 }
 
+
 /* =========================================
-   LEFT SIDEBAR
+   LEFT SIDE NAVIGATION
    ========================================= */
 
 .left-sidebar {
     background: #fff0f6;
+
     border-right: 1px solid #f3c1d7;
-    padding: 25px 18px;
+
+    padding: 25px 15px;
 }
 
 .left-sidebar h3 {
-    color: #c94782;
-    margin-bottom: 15px;
     font-family: Georgia, serif;
+
+    color: #c94782;
+
+    margin-bottom: 15px;
 }
 
 .left-sidebar ul {
@@ -174,12 +201,17 @@ body {
 }
 
 .left-sidebar a {
-    color: #75445d;
-    text-decoration: none;
     display: block;
 
     padding: 8px 10px;
+
+    color: #75445d;
+
+    text-decoration: none;
+
     border-radius: 10px;
+
+    transition: all 0.3s ease;
 }
 
 .left-sidebar a:hover {
@@ -187,14 +219,17 @@ body {
     color: #c94782;
 }
 
+
 /* =========================================
-   MAIN CONTENT
+   MAIN CONTENT AREA
    ========================================= */
 
 .main-content {
-    padding: 30px;
     background: #fffafd;
+
+    padding: 30px;
 }
+
 
 /* =========================================
    HERO IMAGE
@@ -204,22 +239,19 @@ body {
     width: 100%;
     min-height: 250px;
 
-    border-radius: 18px;
+    margin-bottom: 30px;
+
     border: 2px solid #f3b3ce;
 
-    background:
-        linear-gradient(
-            rgba(255, 220, 235, 0.5),
-            rgba(255, 220, 235, 0.5)
-        ),
-        #ffeaf3;
+    border-radius: 18px;
+
+    background: #ffeaf3;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     overflow: hidden;
-    margin-bottom: 30px;
 
     box-shadow: 0 5px 20px rgba(217, 79, 145, 0.12);
 }
@@ -227,18 +259,23 @@ body {
 .hero img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
 .hero-text {
     text-align: center;
+
     padding: 30px;
 }
 
 .hero-text h1 {
     font-family: Georgia, serif;
+
     font-size: 2.5rem;
+
     color: #d94f91;
+
     margin-bottom: 10px;
 }
 
@@ -246,14 +283,17 @@ body {
     color: #795267;
 }
 
+
 /* =========================================
-   CONTENT
+   MAIN CONTENT TEXT
    ========================================= */
 
 .main-content h1,
 .main-content h2 {
     font-family: Georgia, serif;
+
     color: #c94782;
+
     margin-bottom: 15px;
 }
 
@@ -263,6 +303,7 @@ body {
 
 .main-content h2 {
     font-size: 1.5rem;
+
     margin-top: 25px;
 }
 
@@ -270,54 +311,77 @@ body {
     margin-bottom: 15px;
 }
 
-/* Cute content boxes */
+
+/* =========================================
+   CUTE CONTENT BOXES
+   ========================================= */
 
 .content-box {
     background: #fff0f6;
+
     border: 1px solid #f4bdd4;
+
     border-radius: 15px;
+
     padding: 20px;
+
     margin: 20px 0;
 
     box-shadow: 0 4px 12px rgba(217, 79, 145, 0.08);
 }
 
+
 /* =========================================
-   RIGHT SIDEBAR
+   RIGHT SIDE STICKY CONTENT
    ========================================= */
 
 .right-sidebar {
     background: #fff0f6;
+
     border-left: 1px solid #f3c1d7;
-    padding: 25px 18px;
+
+    padding: 25px 15px;
 
     position: sticky;
+
     top: 20px;
+
     height: fit-content;
 }
 
 .right-sidebar h3 {
     font-family: Georgia, serif;
+
     color: #c94782;
+
     margin-bottom: 15px;
 }
+
+
+/* =========================================
+   RIGHT SIDE CARDS
+   ========================================= */
 
 .sticky-card {
     background: white;
+
     border: 1px solid #f3bfd5;
+
     border-radius: 15px;
+
     padding: 15px;
+
     margin-bottom: 15px;
 }
 
-.sticky-card a {
+.sticky-card strong {
     color: #c94782;
-    text-decoration: none;
 }
 
-.sticky-card a:hover {
-    text-decoration: underline;
+.sticky-card p {
+    margin-top: 8px;
 }
+
 
 /* =========================================
    SOCIAL LINKS
@@ -325,23 +389,36 @@ body {
 
 .social-links {
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
+
+    margin-top: 10px;
 }
 
 .social-links a {
     background: #ffd5e6;
+
     padding: 8px 10px;
+
     border-radius: 10px;
+
     text-decoration: none;
+
     color: #75445d;
+
     text-align: center;
+
+    transition: all 0.3s ease;
 }
 
 .social-links a:hover {
     background: #f58fbd;
+
     color: white;
 }
+
 
 /* =========================================
    FOOTER
@@ -349,18 +426,23 @@ body {
 
 .site-footer {
     background: #ffe5f0;
+
     border-top: 2px solid #f3a6c8;
 
     padding: 20px;
+
     text-align: center;
 
     color: #80536a;
+
     font-size: 0.9rem;
 }
 
 .site-footer a {
     color: #c94782;
+
     text-decoration: none;
+
     margin: 0 8px;
 }
 
@@ -368,8 +450,9 @@ body {
     text-decoration: underline;
 }
 
+
 /* =========================================
-   CUTE PINK DECORATIONS
+   SPARKLES
    ========================================= */
 
 .sparkle {
@@ -380,8 +463,9 @@ body {
     color: #e85b98;
 }
 
+
 /* =========================================
-   RESPONSIVE DESIGN
+   MOBILE
    ========================================= */
 
 @media (max-width: 900px) {
@@ -391,7 +475,7 @@ body {
     }
 
     .page-layout {
-        grid-template-columns: 150px 1fr;
+        grid-template-columns: 140px 1fr;
     }
 
     .right-sidebar {
@@ -399,11 +483,20 @@ body {
     }
 }
 
+
 @media (max-width: 650px) {
 
     .site-wrapper {
         width: 100%;
-        border: none;
+    }
+
+    .top-header {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-box {
+        border-right: none;
+        border-bottom: 1px solid #f3a6c8;
     }
 
     .page-layout {
@@ -415,16 +508,11 @@ body {
         border-bottom: 1px solid #f3c1d7;
     }
 
-    .main-navigation ul {
-        flex-direction: column;
+    .main-navigation {
+        flex-wrap: wrap;
     }
 
     .main-navigation a {
-        width: 200px;
-        text-align: center;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
+        padding: 8px 12px;
     }
 }
