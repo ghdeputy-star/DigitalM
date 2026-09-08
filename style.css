@@ -18,73 +18,52 @@ body {
 
     font-family: Arial, Helvetica, sans-serif;
 
-    /* 10% background on each side */
+    /*
+       THIS CREATES THE 10% BACKGROUND
+       ON BOTH SIDES
+    */
+
     padding-left: 10%;
     padding-right: 10%;
 
     min-height: 100vh;
 
+    color: #4c3a44;
+
+    /*
+       PRETTY PINK BACKGROUND
+    */
+
     background:
         radial-gradient(
-            circle at 20% 20%,
-            #ffffff 0px,
+            circle at 15% 20%,
+            rgba(255,255,255,0.8) 2px,
             transparent 3px
         ),
+
         radial-gradient(
-            circle at 80% 40%,
-            #ffffff 0px,
+            circle at 80% 70%,
+            rgba(255,255,255,0.7) 2px,
             transparent 3px
         ),
+
         linear-gradient(
             135deg,
-            #f8c8df,
-            #f6d8eb,
-            #efb5d4
+            #f6c4dc,
+            #f9dbea,
+            #efb2d2
         );
 
     background-size:
-        120px 120px,
-        150px 150px,
+        100px 100px,
+        140px 140px,
         100% 100%;
 
-    color: #4d3542;
-
 }
 
 
 /* =========================================
-   SPARKLES IN BACKGROUND
-========================================= */
-
-body::before {
-
-    content:
-        "✦     ✧     ✦     ⋆     ✧     ✦     ⋆";
-
-    position: fixed;
-
-    top: 15px;
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    font-size: 18px;
-
-    color: rgba(255, 255, 255, 0.8);
-
-    letter-spacing: 10px;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-}
-
-
-/* =========================================
-   WEBSITE CONTAINER
+   WEBSITE
 ========================================= */
 
 .website {
@@ -95,19 +74,16 @@ body::before {
 
     margin: 0 auto;
 
-    background: #ffffff;
+    background: white;
 
     min-height: 100vh;
 
-    position: relative;
+    border-left: 2px solid #dca0c0;
 
-    z-index: 1;
-
-    border-left: 2px solid #e8a7c9;
-    border-right: 2px solid #e8a7c9;
+    border-right: 2px solid #dca0c0;
 
     box-shadow:
-        0 0 25px rgba(180, 77, 132, 0.25);
+        0 0 30px rgba(173, 70, 125, 0.25);
 
 }
 
@@ -116,27 +92,29 @@ body::before {
    HEADER
 ========================================= */
 
-header {
-
+.header {
     width: 100%;
-
 }
 
 
 /* =========================================
-   TOP ROW
-   LOGO + INFORMATION
+   TOP HEADER
 ========================================= */
 
-.top-row {
+.header-top {
 
     display: grid;
 
-    grid-template-columns: 180px 1fr;
+    /*
+       LEFT = LOGO
+       RIGHT = INFORMATION
+    */
 
-    min-height: 120px;
+    grid-template-columns: 160px 1fr;
 
-    border-bottom: 2px solid #e6a6c7;
+    min-height: 115px;
+
+    border-bottom: 2px solid #dca0c0;
 
 }
 
@@ -153,30 +131,33 @@ header {
 
     align-items: center;
 
-    background: #fff7fb;
+    background: #fff8fc;
 
-    border-right: 2px solid #e6a6c7;
-
-    padding: 15px;
+    border-right: 2px solid #dca0c0;
 
 }
 
 
-/* Logo */
+/*
+   LOGO IS ONLY HERE
+*/
 
 .logo {
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size: 34px;
 
     font-weight: bold;
 
-    color: #c84f8d;
+    color: #c44888;
 
     text-shadow:
-        1px 1px 0 #ffffff,
-        2px 2px 5px rgba(200, 79, 141, 0.25);
+        2px 2px 5px
+        rgba(190, 75, 135, 0.2);
 
 }
 
@@ -185,7 +166,7 @@ header {
    INFORMATION AREA
 ========================================= */
 
-.information-area {
+.header-information {
 
     display: flex;
 
@@ -203,48 +184,44 @@ header {
         linear-gradient(
             135deg,
             #fffafd,
-            #ffe9f4
+            #ffe8f3
         );
 
 }
 
 
-.information-area h2 {
+.header-information h2 {
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    color: #c44f89;
+    color: #c44888;
 
     margin-bottom: 8px;
 
 }
 
 
-.information-area p {
+.header-information p {
 
-    max-width: 650px;
+    max-width: 700px;
 
     line-height: 1.5;
 
-    color: #6f5361;
+    color: #67515d;
 
 }
 
 
 /* =========================================
-   NAVIGATION
+   PRIMARY NAVIGATION
 ========================================= */
 
-#navigation {
-
-    width: 100%;
-
-}
-
-
-/* Primary navigation */
-
 .primary-navigation {
+
+    height: 42px;
 
     display: flex;
 
@@ -252,63 +229,40 @@ header {
 
     align-items: center;
 
-    min-height: 50px;
+    background: white;
 
-    gap: 5px;
-
-    background: #ffffff;
-
-    border-bottom: 2px solid #e6a6c7;
+    border-bottom: 2px solid #dca0c0;
 
 }
 
 
 .primary-navigation a {
 
-    position: relative;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        0 25px;
 
     text-decoration: none;
 
-    color: #a83f78;
+    color: #a63e76;
 
     font-weight: bold;
 
-    padding: 15px 24px;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: all 0.3s ease;
 
 }
 
 
 .primary-navigation a:hover {
 
-    background: #ffe1ef;
+    background: #ffe0ef;
 
-    color: #d33783;
-
-    transform: translateY(-2px);
-
-}
-
-
-/* Sparkle when hovering over navigation */
-
-.primary-navigation a:hover::after {
-
-    content: "✦";
-
-    position: absolute;
-
-    top: 4px;
-
-    right: 7px;
-
-    font-size: 10px;
-
-    color: #e989b5;
+    color: #d52f80;
 
 }
 
@@ -319,6 +273,8 @@ header {
 
 .secondary-navigation {
 
+    height: 32px;
+
     display: flex;
 
     justify-content: center;
@@ -327,11 +283,9 @@ header {
 
     gap: 30px;
 
-    min-height: 36px;
-
     background: #fff8fc;
 
-    border-bottom: 2px solid #e6a6c7;
+    border-bottom: 2px solid #dca0c0;
 
 }
 
@@ -340,36 +294,41 @@ header {
 
     text-decoration: none;
 
-    color: #b15b89;
+    font-size: 13px;
 
-    font-size: 14px;
-
-    transition: color 0.3s ease;
+    color: #a95782;
 
 }
 
 
 .secondary-navigation a:hover {
 
-    color: #dd3e89;
+    color: #d52f80;
+
+    text-decoration: underline;
 
 }
 
 
 /* =========================================
-   MAIN PAGE LAYOUT
+   THREE COLUMN BODY
 ========================================= */
 
-.page-layout {
+.body-layout {
 
     display: grid;
 
     /*
-       Main content takes most of the space.
-       Right sidebar is smaller.
+       THIS IS THE KEY PART
+
+       LEFT     CENTER        RIGHT
+       160px    flexible      175px
     */
 
-    grid-template-columns: 1fr 185px;
+    grid-template-columns:
+        160px
+        minmax(0, 1fr)
+        175px;
 
     min-height: 650px;
 
@@ -377,45 +336,129 @@ header {
 
 
 /* =========================================
-   MAIN CONTENT
+   LEFT COLUMN
 ========================================= */
 
-.main-content {
+.left-column {
 
-    background: #ffffff;
+    background: #fff8fc;
 
-    padding: 28px;
+    border-right: 2px solid #dca0c0;
+
+    padding: 25px 15px;
+
+}
+
+
+/*
+   This is NOT navigation.
+   It just fills the left box from
+   your original layout.
+*/
+
+.left-decoration {
+
+    text-align: center;
+
+    position: sticky;
+
+    top: 25px;
+
+}
+
+
+.sparkle-symbol {
+
+    font-size: 34px;
+
+    color: #e58ab4;
+
+    margin-bottom: 15px;
+
+}
+
+
+.left-decoration h3 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #c44888;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.left-decoration p {
+
+    color: #9c5c7e;
+
+    font-size: 13px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.small-sparkles {
+
+    color: #e28ab4;
+
+    font-size: 17px;
+
+    margin-top: 20px;
 
 }
 
 
 /* =========================================
-   HERO
+   CENTER MAIN CONTENT
 ========================================= */
 
-.hero {
+.main-content {
 
-    width: 75%;
+    background: white;
 
-    height: 230px;
-
-    margin: 0 auto 30px auto;
-
-    border: 2px solid #e4a4c5;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    background: #ffeaf4;
-
-    box-shadow:
-        0 5px 15px rgba(201, 86, 143, 0.12);
+    padding: 25px;
 
 }
 
 
-.hero img {
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.hero-image {
+
+    width: 75%;
+
+    height: 220px;
+
+    margin:
+        0 auto 28px auto;
+
+    border:
+        2px solid #dfa4c4;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    background: #ffe9f4;
+
+    box-shadow:
+        0 4px 12px
+        rgba(190, 75, 135, 0.12);
+
+}
+
+
+.hero-image img {
 
     width: 100%;
 
@@ -427,127 +470,129 @@ header {
 
 
 /* =========================================
-   ABOUT ME SECTION
+   ABOUT ME
 ========================================= */
 
-.about-section {
+.about-me {
 
-    max-width: 750px;
+    max-width: 700px;
 
     margin: 0 auto;
 
 }
 
 
-.about-section h1 {
+.about-me h1 {
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    font-size: 34px;
+    font-size: 32px;
 
-    color: #c54c89;
+    color: #c44888;
 
     margin-bottom: 18px;
 
 }
 
 
-.about-section p {
+.about-me p {
 
-    font-size: 16px;
+    font-size: 15px;
 
-    line-height: 1.75;
+    line-height: 1.7;
 
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
-    color: #4f4148;
+    color: #51434a;
 
 }
 
 
 /* =========================================
-   QUICK INFORMATION CARDS
+   INFORMATION CARDS
 ========================================= */
 
-.quick-information {
+.information-cards {
+
+    max-width: 700px;
+
+    margin:
+        30px auto 0 auto;
 
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 15px;
-
-    max-width: 750px;
-
-    margin: 30px auto 0 auto;
+    gap: 12px;
 
 }
 
 
-.info-card {
+.card {
 
-    padding: 18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff7fb,
-            #ffe8f3
-        );
-
-    border: 1px solid #e8b1ce;
-
-    border-radius: 12px;
+    padding: 15px;
 
     text-align: center;
 
-    box-shadow:
-        0 4px 10px rgba(200, 80, 140, 0.08);
+    background: #fff6fb;
+
+    border:
+        1px solid #e5b0cb;
+
+    border-radius: 8px;
 
 }
 
 
-.info-card h3 {
+.card h3 {
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    color: #c34e88;
+    color: #c44888;
 
     margin-bottom: 8px;
 
 }
 
 
-.info-card p {
+.card p {
 
-    font-size: 13px;
-
-    line-height: 1.5;
+    font-size: 12px;
 
     margin-bottom: 4px;
+
+    line-height: 1.4;
 
 }
 
 
 /* =========================================
-   RIGHT SIDEBAR
+   RIGHT COLUMN
 ========================================= */
 
-.right-sidebar {
-
-    border-left: 2px solid #e6a6c7;
+.right-column {
 
     background: #fff8fc;
 
-    padding: 22px 15px;
+    border-left: 2px solid #dca0c0;
+
+    padding: 25px 13px;
 
 }
 
 
-/* Makes the content stay visible */
+/* =========================================
+   STICKY CONTENT
+========================================= */
 
-.sticky-area {
+.sticky-content {
 
     position: sticky;
 
@@ -556,63 +601,73 @@ header {
 }
 
 
-.sticky-area > h2 {
+.sticky-content h2 {
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #c44888;
 
     font-size: 20px;
 
-    color: #c34e88;
+    text-align: center;
 
     margin-bottom: 18px;
-
-    text-align: center;
 
 }
 
 
 /* =========================================
-   STICKY CARDS
+   STICKY BOXES
 ========================================= */
 
-.sticky-card {
+.sticky-box {
 
-    background: #ffffff;
+    background: white;
 
-    border: 1px solid #e8b2ce;
+    border:
+        1px solid #e5b0cb;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
-    padding: 13px;
+    padding: 12px;
 
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
     box-shadow:
-        0 3px 8px rgba(200, 80, 140, 0.08);
+        0 3px 7px
+        rgba(190, 75, 135, 0.08);
 
 }
 
 
-.sticky-card h3 {
+.sticky-box h3 {
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    font-size: 16px;
+    color: #b94a81;
 
-    color: #bd4b83;
+    font-size: 15px;
 
     margin-bottom: 6px;
 
 }
 
 
-.sticky-card p {
+.sticky-box p {
+
+    color: #67545e;
 
     font-size: 12px;
 
     line-height: 1.5;
 
-    color: #66535d;
+    margin-bottom: 3px;
 
 }
 
@@ -623,7 +678,7 @@ header {
 
 footer {
 
-    min-height: 70px;
+    min-height: 65px;
 
     display: flex;
 
@@ -635,31 +690,32 @@ footer {
 
     padding: 15px;
 
-    background: #fff7fb;
+    background: #fff8fc;
 
-    border-top: 2px solid #e6a6c7;
+    border-top: 2px solid #dca0c0;
 
-    color: #816273;
+    color: #806271;
 
-    font-size: 13px;
+    font-size: 12px;
 
 }
 
 
 footer a {
 
-    color: #b64d83;
+    color: #b44980;
 
     text-decoration: none;
 
-    margin: 0 7px;
+    margin:
+        0 6px;
 
 }
 
 
 footer a:hover {
 
-    color: #df3987;
+    color: #db347f;
 
     text-decoration: underline;
 
@@ -668,13 +724,13 @@ footer a:hover {
 
 footer span {
 
-    color: #e1a5c3;
+    color: #dfa4c4;
 
 }
 
 
 /* =========================================
-   SPARKLY MOUSE TRAIL
+   SPARKLY MOUSE
 ========================================= */
 
 .sparkle {
@@ -685,12 +741,15 @@ footer span {
 
     z-index: 9999;
 
-    color: #e889b6;
+    color: #e789b5;
 
     font-size: 13px;
 
     animation:
-        sparkle-fade 0.8s ease-out forwards;
+        sparkle-fade
+        0.8s
+        ease-out
+        forwards;
 
 }
 
@@ -729,38 +788,33 @@ footer span {
     body {
 
         padding-left: 5%;
+
         padding-right: 5%;
 
     }
 
 
-    .page-layout {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .right-sidebar {
-
-        border-left: none;
-
-        border-top: 2px solid #e6a6c7;
-
-    }
-
-
-    .hero {
-
-        width: 100%;
-
-    }
-
-
-    .quick-information {
+    .body-layout {
 
         grid-template-columns:
-            repeat(3, 1fr);
+            120px
+            minmax(0, 1fr)
+            150px;
+
+    }
+
+
+    .hero-image {
+
+        width: 90%;
+
+    }
+
+
+    .information-cards {
+
+        grid-template-columns:
+            1fr;
 
     }
 
@@ -771,7 +825,7 @@ footer span {
    PHONE
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     body {
 
@@ -780,7 +834,7 @@ footer span {
     }
 
 
-    .top-row {
+    .header-top {
 
         grid-template-columns: 1fr;
 
@@ -789,11 +843,11 @@ footer span {
 
     .logo-box {
 
-        min-height: 100px;
+        min-height: 90px;
 
         border-right: none;
 
-        border-bottom: 2px solid #e6a6c7;
+        border-bottom: 2px solid #dca0c0;
 
     }
 
@@ -802,14 +856,15 @@ footer span {
 
         flex-wrap: wrap;
 
+        height: auto;
+
     }
 
 
     .primary-navigation a {
 
-        padding: 10px 12px;
-
-        font-size: 14px;
+        padding:
+            10px 12px;
 
     }
 
@@ -818,9 +873,41 @@ footer span {
 
         flex-wrap: wrap;
 
-        gap: 12px;
+        height: auto;
 
         padding: 8px;
+
+        gap: 12px;
+
+    }
+
+
+    /*
+       On a phone the three columns
+       stack vertically.
+    */
+
+    .body-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .left-column {
+
+        border-right: none;
+
+        border-bottom: 2px solid #dca0c0;
+
+    }
+
+
+    .right-column {
+
+        border-left: none;
+
+        border-top: 2px solid #dca0c0;
 
     }
 
@@ -832,16 +919,11 @@ footer span {
     }
 
 
-    .quick-information {
+    .hero-image {
 
-        grid-template-columns: 1fr;
+        width: 100%;
 
-    }
-
-
-    .about-section h1 {
-
-        font-size: 28px;
+        height: 200px;
 
     }
 
