@@ -1,430 +1,217 @@
-/* =========================================
-   GRACELYN'S WEBSITE
-   Pink + Cute Layout
-   ========================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    background: #ffd6e7;
-    color: #4a3040;
-    line-height: 1.6;
-}
-
-/* =========================================
-   MAIN WEBSITE CONTAINER
-   Leaves 10% on each side of the screen
-   ========================================= */
-
-.site-wrapper {
-    width: 80%;
-    margin: 0 auto;
-    min-height: 100vh;
-    background: #fff8fc;
-    box-shadow: 0 0 30px rgba(255, 105, 180, 0.25);
-    border-left: 2px solid #f3a6c8;
-    border-right: 2px solid #f3a6c8;
-}
-
-/* =========================================
-   HEADER
-   ========================================= */
-
-.site-header {
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #ffe8f2
-    );
-
-    border-bottom: 2px solid #f3a6c8;
-    padding: 20px 30px;
-}
-
-/* Logo / Name */
-
-.logo {
-    font-family: Georgia, serif;
-    font-size: 2.4rem;
-    font-weight: bold;
-    color: #d94f91;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-.logo:hover {
-    color: #b83272;
-}
-
-/* =========================================
-   NAVIGATION
-   Created by nav.js
-   ========================================= */
-
-.main-navigation {
-    margin-top: 15px;
-}
-
-.main-navigation ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.main-navigation li {
-    display: inline-block;
-}
-
-.main-navigation a {
-    display: block;
-    padding: 10px 20px;
-
-    background: #ffd1e5;
-    color: #713b58;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    border-radius: 25px;
-    border: 1px solid #f3a6c8;
-
-    transition: all 0.3s ease;
-}
-
-.main-navigation a:hover {
-    background: #f58fbd;
-    color: white;
-
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(217, 79, 145, 0.25);
-}
-
-/* =========================================
-   SECONDARY NAVIGATION
-   ========================================= */
-
-.secondary-navigation {
-    background: #fff0f7;
-    padding: 10px 20px;
-    border-bottom: 1px solid #f3c1d7;
-    text-align: center;
-}
-
-.secondary-navigation a {
-    color: #a84c78;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 0.9rem;
-}
-
-.secondary-navigation a:hover {
-    color: #d94f91;
-    text-decoration: underline;
-}
-
-/* =========================================
-   MAIN PAGE LAYOUT
-   ========================================= */
-
-.page-layout {
-    display: grid;
-
-    /*
-       Left navigation | Main content | Right sidebar
-    */
-    grid-template-columns: 180px 1fr 180px;
-
-    min-height: 650px;
-}
-
-/* =========================================
-   LEFT SIDEBAR
-   ========================================= */
-
-.left-sidebar {
-    background: #fff0f6;
-    border-right: 1px solid #f3c1d7;
-    padding: 25px 18px;
-}
-
-.left-sidebar h3 {
-    color: #c94782;
-    margin-bottom: 15px;
-    font-family: Georgia, serif;
-}
-
-.left-sidebar ul {
-    list-style: none;
-}
-
-.left-sidebar li {
-    margin-bottom: 10px;
-}
-
-.left-sidebar a {
-    color: #75445d;
-    text-decoration: none;
-    display: block;
-
-    padding: 8px 10px;
-    border-radius: 10px;
-}
-
-.left-sidebar a:hover {
-    background: #ffd4e6;
-    color: #c94782;
-}
-
-/* =========================================
-   MAIN CONTENT
-   ========================================= */
-
-.main-content {
-    padding: 30px;
-    background: #fffafd;
-}
-
-/* =========================================
-   HERO IMAGE
-   ========================================= */
-
-.hero {
-    width: 100%;
-    min-height: 250px;
-
-    border-radius: 18px;
-    border: 2px solid #f3b3ce;
-
-    background:
-        linear-gradient(
-            rgba(255, 220, 235, 0.5),
-            rgba(255, 220, 235, 0.5)
-        ),
-        #ffeaf3;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-    margin-bottom: 30px;
-
-    box-shadow: 0 5px 20px rgba(217, 79, 145, 0.12);
-}
-
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-text {
-    text-align: center;
-    padding: 30px;
-}
-
-.hero-text h1 {
-    font-family: Georgia, serif;
-    font-size: 2.5rem;
-    color: #d94f91;
-    margin-bottom: 10px;
-}
-
-.hero-text p {
-    color: #795267;
-}
-
-/* =========================================
-   CONTENT
-   ========================================= */
-
-.main-content h1,
-.main-content h2 {
-    font-family: Georgia, serif;
-    color: #c94782;
-    margin-bottom: 15px;
-}
-
-.main-content h1 {
-    font-size: 2rem;
-}
-
-.main-content h2 {
-    font-size: 1.5rem;
-    margin-top: 25px;
-}
-
-.main-content p {
-    margin-bottom: 15px;
-}
-
-/* Cute content boxes */
-
-.content-box {
-    background: #fff0f6;
-    border: 1px solid #f4bdd4;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px 0;
-
-    box-shadow: 0 4px 12px rgba(217, 79, 145, 0.08);
-}
-
-/* =========================================
-   RIGHT SIDEBAR
-   ========================================= */
-
-.right-sidebar {
-    background: #fff0f6;
-    border-left: 1px solid #f3c1d7;
-    padding: 25px 18px;
-
-    position: sticky;
-    top: 20px;
-    height: fit-content;
-}
-
-.right-sidebar h3 {
-    font-family: Georgia, serif;
-    color: #c94782;
-    margin-bottom: 15px;
-}
-
-.sticky-card {
-    background: white;
-    border: 1px solid #f3bfd5;
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
-.sticky-card a {
-    color: #c94782;
-    text-decoration: none;
-}
-
-.sticky-card a:hover {
-    text-decoration: underline;
-}
-
-/* =========================================
-   SOCIAL LINKS
-   ========================================= */
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.social-links a {
-    background: #ffd5e6;
-    padding: 8px 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #75445d;
-    text-align: center;
-}
-
-.social-links a:hover {
-    background: #f58fbd;
-    color: white;
-}
-
-/* =========================================
-   FOOTER
-   ========================================= */
-
-.site-footer {
-    background: #ffe5f0;
-    border-top: 2px solid #f3a6c8;
-
-    padding: 20px;
-    text-align: center;
-
-    color: #80536a;
-    font-size: 0.9rem;
-}
-
-.site-footer a {
-    color: #c94782;
-    text-decoration: none;
-    margin: 0 8px;
-}
-
-.site-footer a:hover {
-    text-decoration: underline;
-}
-
-/* =========================================
-   CUTE PINK DECORATIONS
-   ========================================= */
-
-.sparkle {
-    color: #e96ba6;
-}
-
-.heart {
-    color: #e85b98;
-}
-
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-
-@media (max-width: 900px) {
-
-    .site-wrapper {
-        width: 90%;
-    }
-
-    .page-layout {
-        grid-template-columns: 150px 1fr;
-    }
-
-    .right-sidebar {
-        display: none;
-    }
-}
-
-@media (max-width: 650px) {
-
-    .site-wrapper {
-        width: 100%;
-        border: none;
-    }
-
-    .page-layout {
-        display: block;
-    }
-
-    .left-sidebar {
-        border-right: none;
-        border-bottom: 1px solid #f3c1d7;
-    }
-
-    .main-navigation ul {
-        flex-direction: column;
-    }
-
-    .main-navigation a {
-        width: 200px;
-        text-align: center;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gracelyn Deputy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="site-wrapper">
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            Gracelyn Deputy
+        </a>
+
+        <!-- Navigation comes from nav.js -->
+
+        <div id="main-nav"></div>
+
+    </header>
+
+
+    <!-- OPTIONAL SECONDARY NAVIGATION -->
+
+    <div class="secondary-navigation">
+
+        <a href="about.html">About Me</a>
+
+        <a href="school.html">School</a>
+
+        <a href="jobs.html">Experience</a>
+
+    </div>
+
+
+    <!-- MAIN THREE-COLUMN LAYOUT -->
+
+    <div class="page-layout">
+
+
+        <!-- LEFT SIDE -->
+
+        <aside class="left-sidebar">
+
+            <h3>Explore</h3>
+
+            <ul>
+
+                <li>
+                    <a href="about.html">About Me</a>
+                </li>
+
+                <li>
+                    <a href="jobs.html">My Jobs</a>
+                </li>
+
+                <li>
+                    <a href="personal.html">Personal</a>
+                </li>
+
+                <li>
+                    <a href="school.html">School</a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <section class="hero">
+
+                <div class="hero-text">
+
+                    <h1>
+                        Hi, I'm Gracelyn!
+                    </h1>
+
+                    <p>
+                        Welcome to my little corner of the internet
+                        <span class="heart">♥</span>
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <h1>Welcome to My Website</h1>
+
+            <p>
+                Hi! I'm Gracelyn Deputy, and this website is a place
+                where you can learn a little bit more about me, my
+                school experience, my jobs, and the things I enjoy
+                outside of school.
+            </p>
+
+
+            <div class="content-box">
+
+                <h2>About Me</h2>
+
+                <p>
+                    I'm a senior at Iowa State University studying
+                    Marketing and Management. I enjoy being around
+                    people, getting involved, and doing things that
+                    feel meaningful.
+                </p>
+
+            </div>
+
+
+            <div class="content-box">
+
+                <h2>What You'll Find Here</h2>
+
+                <p>
+                    Use the navigation above to learn more about my
+                    education, work experience, personal interests,
+                    and everything in between.
+                </p>
+
+            </div>
+
+        </main>
+
+
+        <!-- RIGHT SIDE -->
+
+        <aside class="right-sidebar">
+
+            <h3>Quick Links</h3>
+
+
+            <div class="sticky-card">
+
+                <strong>Connect With Me</strong>
+
+                <div class="social-links">
+
+                    <a href="#" target="_blank">
+                        Instagram
+                    </a>
+
+                    <a href="#" target="_blank">
+                        LinkedIn
+                    </a>
+
+                    <a href="#" target="_blank">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="sticky-card">
+
+                <strong>Fun Fact</strong>
+
+                <p>
+                    I love working with people and trying new things!
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <p>
+            © 2026 Gracelyn Deputy
+        </p>
+
+        <p>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </p>
+
+    </footer>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="nav.js"></script>
+
+</body>
+
+</html>
