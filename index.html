@@ -9,18 +9,12 @@
 
     <title>Gracelyn Deputy</title>
 
-    <!-- Connect CSS -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 
 <body>
-
-
-    <!-- =========================================
-         MAIN WEBSITE
-    ========================================== -->
 
     <div class="website">
 
@@ -29,31 +23,29 @@
              HEADER
         ========================================== -->
 
-        <header>
+        <header class="header">
 
 
-            <!-- TOP ROW -->
+            <!-- LOGO + INFORMATION -->
 
-            <div class="top-row">
+            <div class="header-top">
 
 
-                <!-- LOGO BOX
-                     Logo ONLY goes here -->
+                <!-- LOGO
+                     THIS IS THE ONLY LOGO AREA -->
 
                 <div class="logo-box">
 
                     <div class="logo">
-
                         Gracelyn
-
                     </div>
 
                 </div>
 
 
-                <!-- INFORMATIONAL AREA -->
+                <!-- INFORMATIONAL GRAPHIC / DESCRIPTION -->
 
-                <div class="information-area">
+                <div class="header-information">
 
                     <h2>
                         Welcome to My Website
@@ -62,7 +54,7 @@
                     <p>
                         Get to know me, my experiences,
                         my education, my work, and the
-                        things that are important to me.
+                        things that make me who I am.
                     </p>
 
                 </div>
@@ -71,10 +63,7 @@
             </div>
 
 
-            <!-- =========================================
-                 NAVIGATION
-                 JavaScript puts the navigation here
-            ========================================== -->
+            <!-- NAVIGATION GOES HERE -->
 
             <div id="navigation"></div>
 
@@ -84,37 +73,81 @@
 
 
         <!-- =========================================
-             MAIN CONTENT
+             THREE COLUMN BODY
         ========================================== -->
 
-        <div class="page-layout">
+        <div class="body-layout">
 
 
             <!-- =========================================
-                 MAIN CONTENT AREA
+                 LEFT COLUMN
+                 
+                 NO NAVIGATION LINKS HERE
             ========================================== -->
+
+            <aside class="left-column">
+
+
+                <div class="left-decoration">
+
+                    <div class="sparkle-symbol">
+                        ✦
+                    </div>
+
+                    <h3>
+                        A Little About Me
+                    </h3>
+
+                    <p>
+                        Student
+                    </p>
+
+                    <p>
+                        Marketer
+                    </p>
+
+                    <p>
+                        People Person
+                    </p>
+
+                    <p>
+                        Always Learning
+                    </p>
+
+                    <div class="small-sparkles">
+                        ✧ ⋆ ✦
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+
+            <!-- =========================================
+                 CENTER MAIN CONTENT
+        ========================================== -->
 
             <main class="main-content">
 
 
                 <!-- HERO IMAGE -->
 
-                <section class="hero">
+                <div class="hero-image">
 
                     <img
                         src="images/hero.jpg"
                         alt="Gracelyn Deputy"
                     >
 
-                </section>
+                </div>
 
 
 
-                <!-- =========================================
-                     ABOUT ME
-                ========================================== -->
+                <!-- MAIN CONTENT -->
 
-                <section class="about-section">
+                <section class="about-me">
 
 
                     <h1>
@@ -133,42 +166,47 @@
 
 
                     <p>
-                        Throughout college, I have had a lot of
-                        different experiences that have helped me
-                        learn more about myself and what I enjoy.
-                        One of the biggest parts of my college
-                        experience was being a member of the
-                        women's basketball team at Iowa Lakes.
-                        Being part of a team taught me a lot about
-                        communication, responsibility, teamwork,
-                        and pushing myself even when things get
-                        difficult.
+                        My college experience has given me a lot of
+                        opportunities to learn more about myself,
+                        both inside and outside of the classroom.
+                        While attending Iowa Lakes, I was a member
+                        of the women's basketball team. Being part
+                        of a team taught me a lot about communication,
+                        teamwork, responsibility, and working toward
+                        a common goal.
                     </p>
 
 
                     <p>
-                        Outside of school, I enjoy staying busy and
-                        working with people. I currently work two
-                        jobs. I work as a server at a restaurant,
-                        and I also work for Friendship Ark, where I
-                        support adults with intellectual disabilities.
+                        Outside of school, I stay pretty busy with
+                        work. I currently have two jobs. I work as
+                        a server at a restaurant, and I also work
+                        for Friendship Ark, where I support adults
+                        with intellectual disabilities.
+                    </p>
+
+
+                    <p>
                         Working at Friendship Ark has especially
                         helped me realize how much I enjoy being
                         around people and doing work that feels
-                        meaningful.
+                        meaningful. I originally thought of it as
+                        just another job, but the experience has
+                        taught me a lot about the kind of work I
+                        actually enjoy.
                     </p>
 
 
                     <p>
-                        My experiences have also helped me learn
-                        more about what I want in the future.
-                        I enjoy marketing and the creative side
-                        of business, but I also really value being
-                        able to make an impact on other people.
+                        I enjoy marketing because I like the
+                        creative side of business and getting to
+                        understand people. At the same time, I have
+                        realized that making an impact on others is
+                        something that is really important to me.
                         I am still figuring out exactly what I want
-                        to do after graduation, but I am excited
-                        to keep learning, gaining experience, and
-                        seeing where my career takes me.
+                        to do after graduation, but I am excited to
+                        continue gaining experience and learning
+                        more about what career is right for me.
                     </p>
 
 
@@ -185,14 +223,12 @@
 
 
 
-                <!-- =========================================
-                     QUICK INFORMATION
-                ========================================== -->
+                <!-- INFORMATION BOXES -->
 
-                <section class="quick-information">
+                <section class="information-cards">
 
 
-                    <div class="info-card">
+                    <div class="card">
 
                         <h3>
                             Education
@@ -209,10 +245,10 @@
                     </div>
 
 
-                    <div class="info-card">
+                    <div class="card">
 
                         <h3>
-                            Work
+                            Experience
                         </h3>
 
                         <p>
@@ -226,15 +262,15 @@
                     </div>
 
 
-                    <div class="info-card">
+                    <div class="card">
 
                         <h3>
                             Interests
                         </h3>
 
                         <p>
-                            Marketing, people,
-                            creativity & teamwork
+                            Marketing, teamwork,
+                            creativity & people
                         </p>
 
                     </div>
@@ -248,72 +284,71 @@
 
 
             <!-- =========================================
-                 RIGHT STICKY AREA
-            ========================================== -->
+                 RIGHT STICKY COLUMN
+        ========================================== -->
 
-            <aside class="right-sidebar">
+            <aside class="right-column">
 
 
-                <div class="sticky-area">
+                <div class="sticky-content">
 
 
                     <h2>
-                        A Little More About Me
+                        Quick Info
                     </h2>
 
 
-                    <div class="sticky-card">
+                    <div class="sticky-box">
 
                         <h3>
-                            Student
+                            School
                         </h3>
 
                         <p>
-                            Senior at Iowa State University
-                            studying marketing and management.
+                            Iowa State University
                         </p>
 
                     </div>
 
 
-                    <div class="sticky-card">
+                    <div class="sticky-box">
+
+                        <h3>
+                            Major
+                        </h3>
+
+                        <p>
+                            Marketing & Management
+                        </p>
+
+                    </div>
+
+
+                    <div class="sticky-box">
 
                         <h3>
                             Work
                         </h3>
 
                         <p>
-                            I enjoy working with people and
-                            gaining experiences that help me grow.
+                            Friendship Ark
+                        </p>
+
+                        <p>
+                            Restaurant
                         </p>
 
                     </div>
 
 
-                    <div class="sticky-card">
+                    <div class="sticky-box">
 
                         <h3>
-                            Basketball
+                            Currently
                         </h3>
 
                         <p>
-                            I played women's basketball while
-                            attending Iowa Lakes Community College.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sticky-card">
-
-                        <h3>
-                            What I Value
-                        </h3>
-
-                        <p>
-                            Meaningful work, relationships,
-                            teamwork, creativity, and making
-                            an impact on others.
+                            Senior year at Iowa State
                         </p>
 
                     </div>
@@ -339,31 +374,31 @@
 
                 © 2026 Gracelyn Deputy
 
-                <span>|</span>
+                <span> | </span>
 
                 <a href="index.html">
                     Home
                 </a>
 
-                <span>|</span>
+                <span> | </span>
 
                 <a href="about.html">
                     About Me
                 </a>
 
-                <span>|</span>
+                <span> | </span>
 
                 <a href="jobs.html">
                     My Jobs
                 </a>
 
-                <span>|</span>
+                <span> | </span>
 
                 <a href="personal.html">
                     Personal
                 </a>
 
-                <span>|</span>
+                <span> | </span>
 
                 <a href="school.html">
                     School
@@ -378,9 +413,7 @@
 
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
+    <!-- JAVASCRIPT -->
 
     <script src="nav.js"></script>
 
