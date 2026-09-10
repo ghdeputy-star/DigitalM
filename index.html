@@ -11,78 +11,266 @@
 
     <!-- Home page layout only -->
     <style>
+        /* =========================================
+           HOME PAGE ONLY
+           ========================================= */
+
         body.home-page {
-            padding: 0;
+            margin: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9) 0 2px, transparent 3px),
+                radial-gradient(circle at 70% 40%, rgba(255,255,255,0.8) 0 2px, transparent 3px),
+                radial-gradient(circle at 40% 80%, rgba(255,255,255,0.9) 0 2px, transparent 3px),
+                linear-gradient(135deg, #ffd6e8, #f8a9ca, #ffd9eb);
+            background-size: 90px 90px, 120px 120px, 150px 150px, 100% 100%;
+            background-attachment: fixed;
+            min-height: 100vh;
         }
+
+        /* =========================================
+           MAIN 80% WEBSITE AREA
+           ========================================= */
 
         body.home-page .home-container {
             width: 80%;
             margin: 0 auto;
             background: white;
             min-height: 100vh;
+            box-shadow:
+                0 0 20px rgba(190, 80, 130, 0.25);
         }
 
-        body.home-page nav {
+        /* =========================================
+           TOP NAVIGATION
+           ========================================= */
+
+        body.home-page .home-container > nav {
+            position: relative;
             width: 100%;
             margin: 0;
-        }
-
-        body.home-page header {
-            width: 100%;
-            margin: 0;
-            min-height: 180px;
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        body.home-page header::before {
-            display: none;
-        }
-
-        body.home-page .home-intro {
-            width: 100%;
-            min-height: 300px;
-            margin: 0;
-            padding: 70px 50px;
-            background: white;
-            text-align: center;
-            border-left: none;
-            border-right: none;
-            border-bottom: none;
+            background: rgba(255, 255, 255, 0.96);
+            border: none;
+            border-bottom: 2px solid #e58ab1;
             box-shadow: none;
         }
 
-        body.home-page .home-intro h2 {
-            font-size: 30px;
-            color: #c7477e;
-            border-bottom: 2px solid #f2b1cd;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+        body.home-page .home-container > nav .nav-container {
+            justify-content: center;
         }
 
-        body.home-page .home-intro p {
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
-            font-size: 17px;
+        /* =========================================
+           TOP INFORMATION AREA
+           ========================================= */
+
+        body.home-page .home-top {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            width: 100%;
+            border-bottom: 2px solid #e58ab1;
         }
+
+        /* Logo box */
+        body.home-page .logo-box {
+            min-height: 135px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff5fa;
+            border-right: 2px solid #e58ab1;
+            color: #d34f88;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow:
+                0 0 5px #ffffff,
+                0 0 10px #f4a4c7;
+        }
+
+        /* Top information */
+        body.home-page .top-info {
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        body.home-page .top-info h1 {
+            margin: 0 0 8px 0;
+            font-size: 34px;
+            color: #c7477e;
+            text-shadow:
+                1px 1px 0 white,
+                0 0 8px rgba(235, 128, 171, 0.4);
+        }
+
+        body.home-page .top-info p {
+            margin: 0;
+            font-size: 17px;
+            color: #6f4a5a;
+        }
+
+        /* =========================================
+           PAGE CONTENT
+           ========================================= */
+
+        body.home-page .page-layout {
+            display: grid;
+            grid-template-columns: 180px 1fr 155px;
+            width: 100%;
+            min-height: 470px;
+        }
+
+        /* =========================================
+           LEFT SIDE NAVIGATION
+           ========================================= */
+
+        body.home-page .left-navigation {
+            background: #fff5fa;
+            border-right: 2px solid #e58ab1;
+            padding: 25px 15px;
+        }
+
+        body.home-page .left-navigation h2 {
+            margin-top: 0;
+            color: #c7477e;
+            font-size: 20px;
+            border-bottom: 2px solid #f2b1cd;
+            padding-bottom: 10px;
+        }
+
+        body.home-page .left-navigation a {
+            display: block;
+            padding: 12px 8px;
+            margin-bottom: 6px;
+            color: #7b3f5d;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        body.home-page .left-navigation a:hover {
+            background: #ffe3ef;
+            color: #d34f88;
+        }
+
+        /* =========================================
+           MAIN HOME PAGE CONTENT
+           ========================================= */
+
+        body.home-page .main-home {
+            padding: 35px 45px;
+            background: white;
+        }
+
+        body.home-page .hero-box {
+            width: 100%;
+            min-height: 145px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff5fa;
+            border: 2px solid #f2b1cd;
+            margin-bottom: 30px;
+        }
+
+        body.home-page .hero-box h2 {
+            margin: 0;
+            color: #c7477e;
+            font-size: 30px;
+            border-bottom: none;
+        }
+
+        body.home-page .main-home h2 {
+            color: #c7477e;
+            font-size: 27px;
+            border-bottom: 2px solid #f2b1cd;
+            padding-bottom: 10px;
+        }
+
+        body.home-page .main-home p {
+            line-height: 1.7;
+            font-size: 16px;
+            color: #59414c;
+        }
+
+        /* =========================================
+           RIGHT SIDE CONTENT AREA
+           ========================================= */
+
+        body.home-page .right-content {
+            background: #fff5fa;
+            border-left: 2px solid #e58ab1;
+            padding: 25px 15px;
+        }
+
+        body.home-page .right-content h2 {
+            margin-top: 0;
+            color: #c7477e;
+            font-size: 20px;
+            border-bottom: 2px solid #f2b1cd;
+            padding-bottom: 10px;
+        }
+
+        body.home-page .right-content p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #59414c;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
 
         body.home-page footer {
             width: 100%;
             margin: 0;
         }
 
-        @media (max-width: 800px) {
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 900px) {
+
             body.home-page .home-container {
                 width: 90%;
             }
 
-            body.home-page header {
-                padding: 45px 25px;
+            body.home-page .page-layout {
+                grid-template-columns: 160px 1fr;
             }
 
-            body.home-page .home-intro {
-                padding: 50px 25px;
+            body.home-page .right-content {
+                display: none;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            body.home-page .home-container {
+                width: 95%;
+            }
+
+            body.home-page .home-top {
+                grid-template-columns: 1fr;
+            }
+
+            body.home-page .logo-box {
+                min-height: 90px;
+                border-right: none;
+                border-bottom: 2px solid #e58ab1;
+            }
+
+            body.home-page .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            body.home-page .left-navigation {
+                border-right: none;
+                border-bottom: 2px solid #e58ab1;
+            }
+
+            body.home-page .main-home {
+                padding: 25px;
             }
         }
     </style>
@@ -92,33 +280,98 @@
 
     <div class="home-container">
 
-        <header>
-            <h1>Gracelyn Deputy</h1>
-            <p>Marketing & Management Student at Iowa State University</p>
-        </header>
+        <!-- Top Navigation -->
+        <nav id="home-navigation"></nav>
 
-        <section class="home-intro">
-            <h2>Hi, I’m Gracelyn!</h2>
+        <!-- Top Information Area -->
+        <div class="home-top">
 
-            <p>
-                Welcome to my website! This is a little space where I get to
-                share some of the experiences, people, interests, and memories
-                that have shaped me throughout college.
-            </p>
+            <div class="logo-box">
+                LOGO
+            </div>
 
-            <p>
-                Take a look around and get to know me a little better!
-            </p>
-        </section>
+            <div class="top-info">
+                <h1>Gracelyn Deputy</h1>
+                <p>Marketing & Management Student at Iowa State University</p>
+            </div>
 
+        </div>
+
+        <!-- Main Page Layout -->
+        <div class="page-layout">
+
+            <!-- Left Navigation -->
+            <aside class="left-navigation">
+
+                <h2>Navigation</h2>
+
+                <a href="index.html">Home</a>
+                <a href="jobs.html">My Jobs</a>
+                <a href="personal.html">Personal</a>
+                <a href="school.html">School</a>
+                <a href="product.html">Product</a>
+
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-home">
+
+                <div class="hero-box">
+                    <h2>Hi, I’m Gracelyn!</h2>
+                </div>
+
+                <h2>Welcome!</h2>
+
+                <p>
+                    Welcome to my website! This is a little space where I get
+                    to share some of the experiences, people, interests, and
+                    memories that have shaped me throughout college.
+                </p>
+
+                <p>
+                    Take a look around and get to know me a little better!
+                </p>
+
+            </main>
+
+            <!-- Right Side -->
+            <aside class="right-content">
+
+                <h2>Quick Info</h2>
+
+                <p>
+                    Marketing & Management Student
+                </p>
+
+                <p>
+                    Iowa State University
+                </p>
+
+            </aside>
+
+        </div>
+
+        <!-- Footer -->
         <footer>
             <p>© 2026 Gracelyn Deputy</p>
         </footer>
 
     </div>
 
-    <!-- Existing navigation -->
+    <!-- Existing Navigation JavaScript -->
     <script src="nav.js"></script>
+
+    <!-- Move the existing navigation into the home page layout -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nav = document.querySelector("body > nav");
+            const homeNavigation = document.getElementById("home-navigation");
+
+            if (nav && homeNavigation) {
+                homeNavigation.replaceWith(nav);
+            }
+        });
+    </script>
 
 </body>
 </html>
