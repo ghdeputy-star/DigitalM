@@ -4,61 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Product | Gracelyn Deputy</title>
+    <title>Products | Gracelyn Deputy</title>
 
     <!-- Same CSS used across the website -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Product cards */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .product-card {
+            background: #fff5fa;
+            border: 2px solid #f2b1cd;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(190, 80, 130, 0.15);
+            transition: 0.25s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 16px rgba(190, 80, 130, 0.25);
+        }
+
+        .product-emoji {
+            font-size: 70px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            color: #c7477e;
+            font-size: 21px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .price {
+            color: #d34f88;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 800px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <h1>My Product</h1>
-        <p>A product I created and developed</p>
+        <h1>Squishy Shop</h1>
+        <p>Cute, soft, and squishy toys for everyone!</p>
     </header>
 
     <section>
-        <h2>Product Overview</h2>
+        <h2>Our Squishy Products</h2>
 
         <p>
-            This page is where I can showcase a product, idea, or business
-            concept that I have created. It gives me the opportunity to share
-            more about the product and explain what makes it unique.
+            Welcome to my little squishy shop! Check out some of our cute and
+            colorful squishy toys. Each one is made to be fun, soft, and
+            satisfying to squeeze.
         </p>
-    </section>
 
-    <section>
-        <h2>About the Product</h2>
+        <div class="product-grid">
 
-        <p>
-            My product was created with the goal of providing something useful,
-            creative, and enjoyable for customers. I wanted to create an idea
-            that would meet a need while also giving me the opportunity to use
-            the marketing and management skills I have developed throughout
-            college.
-        </p>
-    </section>
+            <div class="product-card">
+                <div class="product-emoji">🍓</div>
+                <h3>Strawberry Squish</h3>
+                <p>
+                    A soft and sweet strawberry squishy that is perfect for
+                    keeping on your desk or taking with you wherever you go.
+                </p>
+                <div class="price">$8.00</div>
+            </div>
 
-    <section>
-        <h2>Why I Created It</h2>
+            <div class="product-card">
+                <div class="product-emoji">🐰</div>
+                <h3>Bunny Squish</h3>
+                <p>
+                    A cute and fluffy bunny squishy that makes the perfect
+                    little stress reliever.
+                </p>
+                <div class="price">$10.00</div>
+            </div>
 
-        <p>
-            I wanted to create a product that connects with people and gives
-            them something they would actually enjoy using. This project has
-            allowed me to think creatively, understand a target audience, and
-            consider how a product can be marketed in a way that stands out.
-        </p>
-    </section>
+            <div class="product-card">
+                <div class="product-emoji">🍩</div>
+                <h3>Donut Squish</h3>
+                <p>
+                    A colorful donut squishy that is almost too cute to
+                    squeeze!
+                </p>
+                <div class="price">$9.00</div>
+            </div>
 
-    <section>
-        <h2>What Makes It Unique</h2>
+            <div class="product-card">
+                <div class="product-emoji">🐱</div>
+                <h3>Kitty Squish</h3>
+                <p>
+                    A tiny cat-shaped squishy for anyone who loves cute
+                    animals and soft toys.
+                </p>
+                <div class="price">$8.00</div>
+            </div>
 
-        <ul>
-            <li>Created with the customer in mind</li>
-            <li>Focused on creativity and practicality</li>
-            <li>Designed to connect with a specific target audience</li>
-            <li>Uses marketing ideas to help the product stand out</li>
-        </ul>
+            <div class="product-card">
+                <div class="product-emoji">🍑</div>
+                <h3>Peachy Squish</h3>
+                <p>
+                    A soft peach squishy with a fun design that is perfect
+                    for squeezing when you need a quick break.
+                </p>
+                <div class="price">$9.00</div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-emoji">🧸</div>
+                <h3>Teddy Squish</h3>
+                <p>
+                    A super cute teddy bear squishy that makes a fun addition
+                    to any squishy collection.
+                </p>
+                <div class="price">$11.00</div>
+            </div>
+
+        </div>
     </section>
 
     <footer>
