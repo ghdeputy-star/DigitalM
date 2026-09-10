@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="jobs.html">My Jobs</a>
             <a href="personal.html">Personal</a>
             <a href="school.html">School</a>
+            <a href="product.html">Product</a>
         </div>
     `;
 
