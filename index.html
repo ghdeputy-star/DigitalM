@@ -6,56 +6,197 @@
 
     <title>Gracelyn Deputy</title>
 
-    <!-- External CSS -->
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Home page layout only -->
+    <style>
+        /* =========================================
+           HOME PAGE LAYOUT
+           ========================================= */
+
+        body.home-page {
+            padding: 0;
+        }
+
+        body.home-page .home-container {
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        /* Top information area */
+        body.home-page header {
+            width: 100%;
+            margin: 0;
+            min-height: 135px;
+        }
+
+        /* Navigation */
+        body.home-page nav {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* Main page layout */
+        body.home-page .home-content {
+            display: grid;
+            grid-template-columns: 1fr 180px;
+            width: 100%;
+        }
+
+        /* Main content */
+        body.home-page .main-content {
+            width: 100%;
+        }
+
+        body.home-page .main-content section {
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        /* Hero area */
+        body.home-page .hero {
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff5fa;
+            border-left: none;
+            border-right: 1px solid #efb2ca;
+        }
+
+        body.home-page .hero h2 {
+            border-bottom: none;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Right-side content */
+        body.home-page .side-content {
+            background: #fff5fa;
+            border-left: 2px solid #e58ab1;
+            min-height: 100%;
+            padding: 30px 20px;
+        }
+
+        body.home-page .side-content h2 {
+            color: #c7477e;
+            font-size: 20px;
+            border-bottom: 2px solid #f2b1cd;
+            padding-bottom: 8px;
+        }
+
+        body.home-page .side-content p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        body.home-page footer {
+            width: 100%;
+            margin: 0;
+        }
+
+        @media (max-width: 800px) {
+            body.home-page .home-container {
+                width: 90%;
+            }
+
+            body.home-page .home-content {
+                grid-template-columns: 1fr;
+            }
+
+            body.home-page .side-content {
+                border-left: none;
+                border-top: 2px solid #e58ab1;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="home-page">
 
-    <header>
-        <h1>Gracelyn Deputy</h1>
-        <p>Marketing & Management Student at Iowa State University</p>
-    </header>
+    <div class="home-container">
 
-    <section>
-        <h2>Welcome!</h2>
+        <header>
+            <h1>Gracelyn Deputy</h1>
+            <p>Marketing & Management Student at Iowa State University</p>
+        </header>
 
-        <p>
-            Hi! I'm Gracelyn, a senior at Iowa State University studying
-            Marketing and Management. I enjoy working with people, gaining
-            new experiences, and finding ways to make an impact.
-        </p>
-    </section>
+        <div class="home-content">
 
-    <section>
-        <h2>About Me</h2>
+            <main class="main-content">
 
-        <p>
-            Hi! My name is Gracelyn Deputy, and I am a senior at Iowa State
-            University studying Marketing and Management. Throughout my college
-            experience, I have had the opportunity to learn and grow both inside
-            and outside of the classroom. I spent my first two years at Iowa
-            Lakes Community College, where I earned my AA degree and played on
-            the women's basketball team before continuing my education at Iowa
-            State. I have also gained valuable work experience through my jobs
-            at Friendship Ark and in the restaurant industry. Working at
-            Friendship Ark has taught me the importance of building relationships,
-            communicating with others, and making a positive impact, while my
-            restaurant experience has helped me become more confident, adaptable,
-            and comfortable working in a fast-paced environment. Through school,
-            work, and my personal experiences, I have discovered that I really
-            enjoy working with people, being creative, and learning new things.
-            As I finish my degree, I am excited to continue exploring different
-            opportunities in marketing and management and find a career where I
-            can use my skills while doing work that feels meaningful.
-        </p>
-    </section>
+                <section class="hero">
+                    <h2>Welcome!</h2>
+                </section>
 
-    <footer>
-        <p>© 2026 Gracelyn Deputy</p>
-    </footer>
+                <section>
+                    <h2>Welcome!</h2>
 
-    <!-- Navigation JavaScript -->
+                    <p>
+                        Hi! I'm Gracelyn, a senior at Iowa State University studying
+                        Marketing and Management. I enjoy working with people, gaining
+                        new experiences, and finding ways to make an impact.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>About Me</h2>
+
+                    <p>
+                        Hi! My name is Gracelyn Deputy, and I am a senior at Iowa State
+                        University studying Marketing and Management. Throughout my college
+                        experience, I have had the opportunity to learn and grow both inside
+                        and outside of the classroom. I spent my first two years at Iowa
+                        Lakes Community College, where I earned my AA degree and played on
+                        the women's basketball team before continuing my education at Iowa
+                        State. I have also gained valuable work experience through my jobs
+                        at Friendship Ark and in the restaurant industry. Working at
+                        Friendship Ark has taught me the importance of building relationships,
+                        communicating with others, and making a positive impact, while my
+                        restaurant experience has helped me become more confident, adaptable,
+                        and comfortable working in a fast-paced environment. Through school,
+                        work, and my personal experiences, I have discovered that I really
+                        enjoy working with people, being creative, and learning new things.
+                        As I finish my degree, I am excited to continue exploring different
+                        opportunities in marketing and management and find a career where I
+                        can use my skills while doing work that feels meaningful.
+                    </p>
+                </section>
+
+            </main>
+
+            <aside class="side-content">
+
+                <h2>Quick Info</h2>
+
+                <p>
+                    Marketing & Management Student
+                </p>
+
+                <p>
+                    Iowa State University
+                </p>
+
+                <p>
+                    Senior
+                </p>
+
+            </aside>
+
+        </div>
+
+        <footer>
+            <p>© 2026 Gracelyn Deputy</p>
+        </footer>
+
+    </div>
+
+    <!-- Existing navigation -->
     <script src="nav.js"></script>
 
 </body>
