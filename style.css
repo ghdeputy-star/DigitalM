@@ -140,7 +140,7 @@ header {
    ========================================= */
 
 header::before {
-    content: "LOGO";
+    content: "";
 
     position: absolute;
 
@@ -154,20 +154,13 @@ header::before {
     align-items: center;
     justify-content: center;
 
-    background: #fff5fa;
+    background-color: #fff5fa;
+    background-image: url("bunny.jpeg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
     border-right: 2px solid #e58ab1;
-
-    color: #d34f88;
-
-    font-size: 30px;
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    text-shadow:
-        0 0 5px #ffffff,
-        0 0 10px #f4a4c7;
 }
 
 
